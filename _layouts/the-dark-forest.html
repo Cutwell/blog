@@ -1,0 +1,92 @@
+---
+layout: post
+---
+
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .wrapper {
+        /* slightly transparent dark background */
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 1rem;
+        /* soft edges */
+        border-radius: 1rem;
+    }
+
+    #bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        content: "";
+        /*set fixed position*/
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeout {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    .forest1 {
+        background-image: url("/_posts/2023-01-17-dark-forest-hypothesis/forest-1.png");
+    }
+
+    .forest2 {
+        background-image: url("/_posts/2023-01-17-dark-forest-hypothesis/forest-2.png");
+    }
+
+    .hunter2 {
+        background-image: url("/_posts/2023-01-17-dark-forest-hypothesis/hunter-2.png");
+    }
+</style>
+
+<script>
+    var scrollYPos = 0;
+    document.addEventListener("scroll", function () {
+        let offset = window.scrollY / window.scrollMaxY;
+        let currPos = offset < 0.3 ? 0 : offset < 0.6 ? 1 : 2;
+
+        if (currPos != scrollYPos) {
+            scrollYPos = currPos;
+            let bg = document.getElementById("bg");
+
+            bg.style.animation = "fadeout 2s";
+
+            setTimeout(function () {
+                let bg = document.getElementById("bg");
+                bg.className = scrollYPos == 0 ? "forest1" : scrollYPos == 1 ? "hunter2" : "forest2";
+                bg.style.animation = "fadein 2s";
+            }, 1000);
+        }
+    });
+</script>
+
+<div id="bg" class="forest1"></div>
+
+<div class="wrapper">
+{{ content }}
+</div>

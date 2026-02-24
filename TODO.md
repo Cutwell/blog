@@ -1,0 +1,2 @@
+- [ ] Adding .md to blog posts results in plain markdown text file being returned
+- [ ] 

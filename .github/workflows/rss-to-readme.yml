@@ -1,0 +1,16 @@
+name: Update this repo's README
+
+on:
+  workflow_dispatch: # run manually
+  schedule:
+    # Once a day at 8 AM
+    - cron: 0 8 * * *
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JasonEtco/rss-to-readme@v1
+        with:
+          feed-url: https://cutwell.github.io/blog/feed.xml
+          readme-section: feed

@@ -1,0 +1,86 @@
+---
+layout: compress
+---
+{% include header.html %}
+
+{% if site.compression.css %}
+<style>{% include main.css %}</style>
+{% endif %}
+
+<nav class="navbar">
+  <a class="nav-logo" href="{{ site.url }}">ᛉ</a>
+  <div class="nav-icons">
+    <button class="nav-btn" id="search-btn" aria-label="Search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </button>
+    <button class="nav-btn" id="theme-btn" aria-label="Toggle theme">
+      <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="search-overlay" id="search-overlay">
+  <div class="search-modal">
+    <input type="text" id="search-input" placeholder="Search posts…" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+</div>
+
+{{ content }}
+
+{% if page.layout != 'post'  %}
+<br>
+{% endif %}
+
+{% if site.compression.load-time %}
+<i id="lt" class="d"></i><br>
+{% endif %}
+
+{% if site.compression.page-size %}
+<i id="ps" class="d"></i>
+{% endif %}
+
+<script>
+var POSTS=[{% for post in site.posts %}{"t":{{ post.title | jsonify }},"u":{{ site.url | append: post.url | jsonify }},"d":{{ post.date | date: "%B %e, %Y" | jsonify }},"e":{{ post.excerpt | strip_html | truncate: 120 | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}];
+(function(){
+var btn=document.getElementById('theme-btn');
+btn.addEventListener('click',function(){
+var dark=document.documentElement.getAttribute('data-theme')==='dark';
+document.documentElement.setAttribute('data-theme',dark?'light':'dark');
+localStorage.setItem('theme',dark?'light':'dark');
+});
+})();
+(function(){
+var btn=document.getElementById('search-btn'),overlay=document.getElementById('search-overlay'),input=document.getElementById('search-input'),results=document.getElementById('search-results');
+function openSearch(){overlay.classList.add('open');input.focus();render('');}
+function closeSearch(){overlay.classList.remove('open');input.value='';}
+btn.addEventListener('click',openSearch);
+overlay.addEventListener('click',function(e){if(e.target===overlay)closeSearch();});
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape')closeSearch();
+if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();overlay.classList.contains('open')?closeSearch():openSearch();}
+});
+function render(q){
+q=q.toLowerCase().trim();
+var f=q?POSTS.filter(function(p){return p.t.toLowerCase().indexOf(q)>-1||(p.e&&p.e.toLowerCase().indexOf(q)>-1);}):POSTS;
+if(!f.length){results.innerHTML='<div class="search-no-results">No posts found.<\/div>';return;}
+results.innerHTML=f.map(function(p){return '<div class="search-result"><a href="'+p.u+'"><div class="search-result-title">'+p.t+'<\/div><div class="search-result-date">'+p.d+'<\/div><\/a><\/div>';}).join('');
+}
+input.addEventListener('input',function(){render(this.value);});
+})();
+{% if site.compression.page-size %}
+document.getElementById("ps").innerHTML="Size: "+document.documentElement.outerHTML.length+" bytes";
+{% endif %}
+{% if site.compression.load-time %}
+window.onload=function(){
+var perfData=performance.getEntriesByType("navigation")[0];
+if(perfData){
+document.getElementById("lt").innerHTML="Load time: "+Math.round(perfData.domContentLoadedEventEnd-perfData.fetchStart)+"ms"
+}else{
+document.getElementById("lt").innerHTML="Load time: "+(window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart)+"ms"
+}
+};
+{% endif %}
+document.querySelectorAll("img").forEach(function(img){img.setAttribute("loading","lazy")});
+</script>
