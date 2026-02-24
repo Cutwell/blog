@@ -1,5 +1,7 @@
-* GitHub: [https://github.com/Cutwell/featherweight][1]
-* Creator: [https://github.com/Cutwell][2]
+**Get in touch**
 
-[1]: https://github.com/Cutwell/featherweight
-[2]: https://github.com/Cutwell
+* [GitHub][1]
+* [LinkedIn][2]
+
+[1]: https://github.com/Cutwell
+[2]: https://www.linkedin.com/in/zacharysmith5/

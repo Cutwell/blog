@@ -5,11 +5,9 @@ title: Zachary's Blog
 # Hi, I'm Zachary.
 
 
-* MLE, GenAI, Full-stack @ Datatonic.
-
-* LangChain tutorials @ [youtube.com/@cutwell946](https://www.youtube.com/@cutwell946)
-
-* Founder of [storyscribbler.com](https://storyscribbler.com/)
+* MLE @ [Datatonic](https://datatonic.com/)
+* LangChain tutorials @ [YouTube](https://www.youtube.com/@cutwell946)
+* Solo developer @ [StoryScribbler](https://storyscribbler.com/)
 
 <br>
 

@@ -1,10 +1,10 @@
 # website title (appears in tab and headers if not overriden by blog title)
-name: Featherweight # (leave blank for no fallback/title element)
+name: Zachary's Blog # (leave blank for no fallback/title element)
 
 # website author
-author: Featherweight
+author: Zachary
 
-description: Featherweight is an ultra-lightweight Jekyll theme, aiming to minimise bandwidth usage and deliver a bare-bones experience.
+description: Personal blog by Zachary — writing about AI, machine learning, technology, and sci-fi.
 
 lang: en # replace with ISO 639-1 Language Code for your language (or leave empty to omit the lang setting)
 

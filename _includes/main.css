@@ -2,7 +2,7 @@
     --bg: #fff;
     --fg: #111;
     --muted: #767676;
-    --link: #0969da;
+    --link: #1e66f0;            /* Catppuccin Latte Blue */
     --nav-bg: rgba(255,255,255,0.97);
     --nav-border: rgba(0,0,0,0.06);
     --btn-hover: rgba(0,0,0,0.06);
@@ -15,14 +15,17 @@
     --table-stripe: #f6f8fa;
     --code-bg: #f6f8fa;
     --code-border: rgba(0,0,0,0.08);
-    --code-fg: #1f2328
+    --code-fg: #1f2328;
+    --pill-fg: #8839ef;         /* Catppuccin Latte Mauve */
+    --pill-bg: rgba(136,57,239,0.06);
+    --pill-border: rgba(136,57,239,0.28)
 }
 
 [data-theme=dark] {
     --bg: #1c1f26;
     --fg: #dde1e7;
     --muted: #7d8491;
-    --link: #6ba3d6;
+    --link: #89b4fa;            /* Catppuccin Mocha Blue */
     --nav-bg: rgba(28,31,38,0.97);
     --nav-border: rgba(255,255,255,0.05);
     --btn-hover: rgba(255,255,255,0.07);
@@ -35,7 +38,10 @@
     --table-stripe: #181b22;
     --code-bg: #161b22;
     --code-border: rgba(255,255,255,0.08);
-    --code-fg: #e6edf3
+    --code-fg: #e6edf3;
+    --pill-fg: #cba6f7;         /* Catppuccin Mocha Mauve */
+    --pill-bg: rgba(203,166,247,0.08);
+    --pill-border: rgba(203,166,247,0.28)
 }
 
 html {
@@ -139,6 +145,16 @@ img {
     box-shadow: 0 2px 16px rgba(0,0,0,0.1)
 }
 
+.link-favicon {
+    display: inline-block;
+    width: 0.85em;
+    height: 0.85em;
+    vertical-align: middle;
+    margin: 0 0.25em 0 0;
+    border-radius: 2px;
+    box-shadow: none
+}
+
 [data-theme=dark] img {
     box-shadow: 0 2px 16px rgba(0,0,0,0.45)
 }
@@ -184,35 +200,35 @@ pre code {
     border-radius: 0
 }
 
-/* Syntax token colors — light mode (GitHub Light) */
-.highlight .c,.highlight .c1,.highlight .cm,.highlight .cs,.highlight .cp { color: #6e7781 }
-.highlight .k,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr,.highlight .kc { color: #cf222e }
-.highlight .kt { color: #953800 }
-.highlight .s,.highlight .s1,.highlight .s2,.highlight .sa,.highlight .sb,.highlight .sc,.highlight .dl { color: #0a3069 }
-.highlight .m,.highlight .mi,.highlight .mf,.highlight .mh,.highlight .mo,.highlight .il { color: #0550ae }
-.highlight .nf,.highlight .fm { color: #8250df }
-.highlight .nc { color: #953800 }
-.highlight .nb { color: #0550ae }
-.highlight .nt { color: #116329 }
-.highlight .na { color: #0550ae }
-.highlight .o,.highlight .ow { color: #cf222e }
-.highlight .gd { color: #82071e; background: #ffebe9 }
-.highlight .gi { color: #116329; background: #dafbe1 }
+/* Syntax token colors — light mode (Catppuccin Latte) */
+.highlight .c,.highlight .c1,.highlight .cm,.highlight .cs,.highlight .cp { color: #8c8fa1 }
+.highlight .k,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr,.highlight .kc { color: #8839ef }
+.highlight .kt { color: #df8e1d }
+.highlight .s,.highlight .s1,.highlight .s2,.highlight .sa,.highlight .sb,.highlight .sc,.highlight .dl { color: #40a02b }
+.highlight .m,.highlight .mi,.highlight .mf,.highlight .mh,.highlight .mo,.highlight .il { color: #fe640b }
+.highlight .nf,.highlight .fm { color: #1e66f0 }
+.highlight .nc { color: #df8e1d }
+.highlight .nb { color: #179299 }
+.highlight .nt { color: #d20f39 }
+.highlight .na { color: #179299 }
+.highlight .o,.highlight .ow { color: #04a5e5 }
+.highlight .gd { color: #d20f39; background: rgba(210,15,57,0.1) }
+.highlight .gi { color: #40a02b; background: rgba(64,160,43,0.1) }
 
-/* Syntax token colors — dark mode (GitHub Dark) */
-[data-theme=dark] .highlight .c,[data-theme=dark] .highlight .c1,[data-theme=dark] .highlight .cm,[data-theme=dark] .highlight .cs,[data-theme=dark] .highlight .cp { color: #8b949e }
-[data-theme=dark] .highlight .k,[data-theme=dark] .highlight .kd,[data-theme=dark] .highlight .kn,[data-theme=dark] .highlight .kp,[data-theme=dark] .highlight .kr,[data-theme=dark] .highlight .kc { color: #ff7b72 }
-[data-theme=dark] .highlight .kt { color: #ffa657 }
-[data-theme=dark] .highlight .s,[data-theme=dark] .highlight .s1,[data-theme=dark] .highlight .s2,[data-theme=dark] .highlight .sa,[data-theme=dark] .highlight .sb,[data-theme=dark] .highlight .sc,[data-theme=dark] .highlight .dl { color: #a5d6ff }
-[data-theme=dark] .highlight .m,[data-theme=dark] .highlight .mi,[data-theme=dark] .highlight .mf,[data-theme=dark] .highlight .mh,[data-theme=dark] .highlight .mo,[data-theme=dark] .highlight .il { color: #79c0ff }
-[data-theme=dark] .highlight .nf,[data-theme=dark] .highlight .fm { color: #d2a8ff }
-[data-theme=dark] .highlight .nc { color: #ffa657 }
-[data-theme=dark] .highlight .nb { color: #79c0ff }
-[data-theme=dark] .highlight .nt { color: #7ee787 }
-[data-theme=dark] .highlight .na { color: #79c0ff }
-[data-theme=dark] .highlight .o,[data-theme=dark] .highlight .ow { color: #ff7b72 }
-[data-theme=dark] .highlight .gd { color: #ffa198; background: #67060c }
-[data-theme=dark] .highlight .gi { color: #56d364; background: #0f5323 }
+/* Syntax token colors — dark mode (Catppuccin Mocha) */
+[data-theme=dark] .highlight .c,[data-theme=dark] .highlight .c1,[data-theme=dark] .highlight .cm,[data-theme=dark] .highlight .cs,[data-theme=dark] .highlight .cp { color: #7f849c }
+[data-theme=dark] .highlight .k,[data-theme=dark] .highlight .kd,[data-theme=dark] .highlight .kn,[data-theme=dark] .highlight .kp,[data-theme=dark] .highlight .kr,[data-theme=dark] .highlight .kc { color: #cba6f7 }
+[data-theme=dark] .highlight .kt { color: #f9e2af }
+[data-theme=dark] .highlight .s,[data-theme=dark] .highlight .s1,[data-theme=dark] .highlight .s2,[data-theme=dark] .highlight .sa,[data-theme=dark] .highlight .sb,[data-theme=dark] .highlight .sc,[data-theme=dark] .highlight .dl { color: #a6e3a1 }
+[data-theme=dark] .highlight .m,[data-theme=dark] .highlight .mi,[data-theme=dark] .highlight .mf,[data-theme=dark] .highlight .mh,[data-theme=dark] .highlight .mo,[data-theme=dark] .highlight .il { color: #fab387 }
+[data-theme=dark] .highlight .nf,[data-theme=dark] .highlight .fm { color: #89b4fa }
+[data-theme=dark] .highlight .nc { color: #f9e2af }
+[data-theme=dark] .highlight .nb { color: #94e2d5 }
+[data-theme=dark] .highlight .nt { color: #f38ba8 }
+[data-theme=dark] .highlight .na { color: #94e2d5 }
+[data-theme=dark] .highlight .o,[data-theme=dark] .highlight .ow { color: #89dceb }
+[data-theme=dark] .highlight .gd { color: #f38ba8; background: rgba(243,139,168,0.15) }
+[data-theme=dark] .highlight .gi { color: #a6e3a1; background: rgba(166,227,161,0.1) }
 
 .hero {
     position: relative;
@@ -389,4 +405,22 @@ pre code {
     color: var(--muted);
     text-align: center;
     font-size: 0.9em
+}
+
+.pill {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid var(--table-border);
+    border-radius: 999px;
+    padding: 0.1em 0.6em;
+    font-size: 0.82em;
+    text-decoration: none;
+    color: var(--fg);
+    white-space: nowrap;
+    transition: border-color 0.18s, color 0.18s
+}
+
+.pill:hover {
+    border-color: var(--pill-fg);
+    color: var(--pill-fg)
 }

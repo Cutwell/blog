@@ -83,4 +83,16 @@ document.getElementById("lt").innerHTML="Load time: "+(window.performance.timing
 };
 {% endif %}
 document.querySelectorAll("img").forEach(function(img){img.setAttribute("loading","lazy")});
+document.querySelectorAll('a[href^="http"]').forEach(function(a){
+if(a.classList.contains('nav-logo'))return;
+try{
+var u=new URL(a.href);
+if(u.hostname===location.hostname)return;
+var i=document.createElement('img');
+i.src='https://www.google.com/s2/favicons?domain='+u.hostname+'&sz=64';
+i.className='link-favicon';
+i.setAttribute('aria-hidden','true');
+a.insertBefore(i,a.firstChild);
+}catch(e){}
+});
 </script>
