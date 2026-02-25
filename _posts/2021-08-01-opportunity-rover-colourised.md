@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using neural networks to colourise images from the Opportunity Mars Rover.
-categories: [Artificial Intelligence, Neural Networks, Python]
+categories: [AI, Python]
 ---
 
 ![figure 0](/_posts/2021-08-01-opportunity-rover-colourised/1.png "figure 0")

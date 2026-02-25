@@ -1,0 +1,204 @@
+{
+  "main": {
+    "id": "78ba5411eff21bb0",
+    "type": "split",
+    "children": [
+      {
+        "id": "a962abb1082f0248",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0bb5468ebb8b493e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2026-02-25-minecraft-agent-merlin.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-02-25-minecraft-agent-merlin"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a07d8d15a3bed43f",
+    "type": "split",
+    "children": [
+      {
+        "id": "d7a441e538bf17ba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ca00ea8a2e090aa5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "1a399658440bbf86",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "8c67a30f98cc5672",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6c0dd9f7f9d781fa",
+    "type": "split",
+    "children": [
+      {
+        "id": "70f337cf3033e7c6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "52dd95b1a71a1544",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/2026-02-25-minecraft-agent-merlin.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2026-02-25-minecraft-agent-merlin"
+            }
+          },
+          {
+            "id": "2ddc519d887b2d15",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/2026-02-25-minecraft-agent-merlin.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2026-02-25-minecraft-agent-merlin"
+            }
+          },
+          {
+            "id": "fb0edb00069bdfb7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "ee9b999f9880aa88",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "d6db5ca6c0ce9d7a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/2026-02-25-minecraft-agent-merlin.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2026-02-25-minecraft-agent-merlin"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "0bb5468ebb8b493e",
+  "lastOpenFiles": [
+    "_site/_posts/2026-02-25-minecraft-agent-merlin/blockbench.webp",
+    "_posts/2026-02-25-minecraft-agent-merlin/blockbench.webp",
+    "_site/_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.13.38.webp",
+    "_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.13.38.webp",
+    "_site/_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.13.38.png",
+    "_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.13.38.png",
+    "_site/_posts/2026-02-25-minecraft-agent-merlin/creeper-wiki.webp",
+    "_posts/2026-02-25-minecraft-agent-merlin/creeper-wiki.webp",
+    "_site/_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.07.27.webp",
+    "_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.07.27.webp",
+    "_site/_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.07.27.png",
+    "_posts/2026-02-25-minecraft-agent-merlin",
+    "_site/_posts/2026-02-25-",
+    "_posts/2026-02-25-/Unconfirmed 344183.crdownload",
+    "_posts/2026-02-25-"
+  ]
+}

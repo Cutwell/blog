@@ -9,7 +9,7 @@ layout: default
 <a class="home-link" href="{{ site.url }}">{% if site.home-link-text %}{{ site.home-link-text }}{% else %}Return Home{% endif %}</a>
 {% endif %}
 <h1>{{ page.title }}</h1>
-<p class="post-meta">{{ page.date | date: "%B %e, %Y" }}{% capture rt %}{% include reading-time.html %}{% endcapture %}{% assign rt = rt | strip %}{% if rt != "" %} &middot; {{ rt }}{% endif %}</p>
+<p class="post-meta">Last updated: {{ page.date | date: "%B %e, %Y" }}{% capture rt %}{% include reading-time.html %}{% endcapture %}{% assign rt = rt | strip %}{% if rt != "" %} &middot; {{ rt }}{% endif %}</p>
 
 {{ content }}
 

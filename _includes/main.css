@@ -112,13 +112,6 @@ blockquote {
     vertical-align: baseline
 }
 
-.post-list td:first-child {
-    white-space: nowrap;
-    padding-right: 1.5em;
-    font-size: 0.8em;
-    color: var(--muted)
-}
-
 .post-list tr {
     border-bottom: 1px solid var(--table-border)
 }
@@ -143,6 +136,16 @@ img {
     margin: 1.5em auto;
     border-radius: 8px;
     box-shadow: 0 2px 16px rgba(0,0,0,0.1)
+}
+
+h1 img, h2 img, h3 img {
+    display: inline;
+    height: 1em;
+    width: auto;
+    margin: 0 0 0 0.3em;
+    border-radius: 3px;
+    box-shadow: none;
+    vertical-align: middle
 }
 
 .link-favicon {

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Too dangerous to live, too unregulated to die.
-categories: [AI, Opinion]
+categories: [AI]
 ---
 _How stable diffusion is disrupting artists' livelihoods, and why "AI Creatives" won't stop ripping off their favourite artwork._
 
@@ -66,5 +66,3 @@ I'd like to see further efforts by the AI community to develop their models foll
 <!-- References -->
 [dreambooth]: https://dreambooth.github.io/
 [musenet]: https://openai.com/blog/musenet/
----
-_Zachary Smith is an MSc Artificial Intelligence graduate, working in machine learning and writing about new technology and ethical AI._
