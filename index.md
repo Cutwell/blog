@@ -11,13 +11,13 @@ LangChain tutorials @ [YouTube](https://www.youtube.com/@cutwell946)
 
 Solo developer @ [StoryScribbler](https://storyscribbler.com/)
 
-* [GitHub][1]
-* [LinkedIn][2]
+*Get in touch*
 
-[1]: https://github.com/Cutwell
-[2]: https://www.linkedin.com/in/zacharysmith5/
+* Check out my projects on [GitHub](https://github.com/Cutwell)
+* Or follow me on [LinkedIn](https://www.linkedin.com/in/zacharysmith5/)
 
 _Sometimes I write about technology and sci-fi:_
-{% if site.compression.blogs and site.posts %}
-<table class="post-list">{% for post in site.posts %}<tr><td><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></td></tr>{% endfor %}</table>
+{% if site.compression.blogs and site.articles %}
+{% assign articles = site.articles | sort: 'last-updated' | reverse %}
+<table class="post-list">{% for post in articles %}<tr><td><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></td></tr>{% endfor %}</table>
 {% endif %}

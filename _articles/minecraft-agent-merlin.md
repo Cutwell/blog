@@ -3,13 +3,14 @@ layout: post
 title: Merlin - Building a better chatbot than Microsoft/Mojang
 categories:
   - AI
+last-updated: 2026-02-25
 ---
 
-## The competition - who is Merl? ![merl](/_posts/2026-02-25-minecraft-agent-merlin/merl.webp)
+## The competition - who is Merl? ![merl](/media/minecraft-agent-merlin/merl.webp)
 
 [Merl](https://help.minecraft.net/hc/en-us/articles/38053285673229-About-Merl-the-Minecraft-Support-Virtual-Agent) is a Minecraft AI agent build by Microsoft/Mojang, to help users visiting the Minecraft help center.
 
-![merl UI](/_posts/2026-02-25-minecraft-agent-merlin/merl-screenshot.webp)
+![merl UI](/media/minecraft-agent-merlin/merl-screenshot.webp)
 
 Visually, the agent is interesting, but as soon as you start communicating with it you realise it seems to know nothing about the game it claims to support.
 
@@ -17,9 +18,9 @@ I'm a long-time Minecraft fan, creating an account way back in 2012 and playing 
 
 So why is it bad? Let's look at an example (and compare against our own agent, Merlin, for fun):
 
-|Merl ![merl](/_posts/2026-02-25-minecraft-agent-merlin/merl.webp)|Merlin ![merl](/_posts/2026-02-25-minecraft-agent-merlin/merlin.webp)|
+|Merl ![merl](/media/minecraft-agent-merlin/merl.webp)|Merlin ![merl](/media/minecraft-agent-merlin/merlin.webp)|
 |:--:|:--:|
-|![merl answering how long a creeper takes to explode](/_posts/2026-02-25-minecraft-agent-merlin/merl-creeper-question.webp)|![merlin answering how long a creeper takes to explode](/_posts/2026-02-25-minecraft-agent-merlin/merlin-creeper-question.webp)|
+|![merl answering how long a creeper takes to explode](/media/minecraft-agent-merlin/merl-creeper-question.webp)|![merlin answering how long a creeper takes to explode](/media/minecraft-agent-merlin/merlin-creeper-question.webp)|
 
 First of all, Merl doesn't even try to answer the question - which is strange since it's likely utilising the same family of LLM models as ChatGPT in the background, [who can answer it just fine when asked](https://chatgpt.com/share/699ef865-f014-8006-976a-716e39ef917e). What this indicates is that some highly restrictive filtering / model armour is in place to prevent Merl from answering questions wrong / going off-topic, at the cost of a far worse user experience.
 
@@ -63,7 +64,7 @@ The visualisation for this tool was important - in Minecraft players can interac
 
 |Crafting a furnace|Cooking steak|Upgrading an axe to Netherite|
 |:--:|:--:|:--:|
-|![furnace recipe](/_posts/2026-02-25-minecraft-agent-merlin/furnace-recipe.webp)|![steak recipe](/_posts/2026-02-25-minecraft-agent-merlin/steak-recipe.webp)|![netherite axe recipe](/_posts/2026-02-25-minecraft-agent-merlin/netherite-axe-recipe.webp)|
+|![furnace recipe](/media/minecraft-agent-merlin/furnace-recipe.webp)|![steak recipe](/media/minecraft-agent-merlin/steak-recipe.webp)|![netherite axe recipe](/media/minecraft-agent-merlin/netherite-axe-recipe.webp)|
 
 In my opinion, small details like this elevate a chatbot experience.
 
@@ -79,13 +80,13 @@ Visualisation of wiki searches is less about engagement and more about attributi
 
 |Reading the "Creeper" wiki page|
 |:--:|
-|![creeper wiki](/_posts/2026-02-25-minecraft-agent-merlin/creeper-wiki.webp)|
+|![creeper wiki](/media/minecraft-agent-merlin/creeper-wiki.webp)|
 
 ### Full-stack engineering
 
 After establishing the agent tooling, wrapping it together with a tool-capable LLM (I chose Claude Haiku 4.5) and deploying as an API was trivial. We're not concerning ourselves with full productionisation for this demo, so we skipped steps like user authentication or a database to store conversations.
 
-![Merlin in Blockbench](/_posts/2026-02-25-minecraft-agent-merlin/blockbench.webp)
+![Merlin in Blockbench](/media/minecraft-agent-merlin/blockbench.webp)
 
 Building the frontend was interesting - I've plenty of chatbot experience, but I've never worked with 3d scenes. To animate Merlin I utilised [Blockbench](https://www.blockbench.net/), a desktop app with specific features for rendering Minecraft skins onto a pre-made 3d model. I animated his various reactions using keyframes, and despite it being my first attempt with such software I'm pleased with how he turned out.
 

@@ -11,7 +11,7 @@ This is a personal blog built with Jekyll and the Featherweight theme. The site 
 ### Jekyll Site Structure
 
 - **_config.yml**: Main Jekyll configuration. Uses the Featherweight theme (v0.7.15) with extensive compression and optimization settings.
-- **_posts/**: Blog posts in Markdown format. Each post follows the naming convention `YYYY-MM-DD-post-title.md` and includes front matter with layout, title, and categories. Images are stored in corresponding `_posts/YYYY-MM-DD-post-title/` subdirectories.
+- **_articles/**: Blog posts in Markdown format as a Jekyll collection. Filenames use the format `post-title.md` (no date prefix — dates are tracked via `last-updated` in front matter). Images are stored in `/media/post-title/` subdirectories.
 - **_layouts/**: Custom HTML layouts for special post types (e.g., `python-post.html`, `the-dark-forest.html`). These add specialized CSS styling to posts.
 - **_includes/**: Reusable content snippets (e.g., `contact.md`) included via Liquid tags.
 - **index.md**: Homepage using the default layout, displays blog post list in a table format.
@@ -70,17 +70,18 @@ bundle exec jekyll clean
 
 ### Creating New Blog Posts
 
-1. Create a new file in `_posts/` with the format: `YYYY-MM-DD-post-title.md`
+1. Create a new file in `_articles/` with the format: `post-title.md`
 2. Add front matter:
    ```yaml
    ---
    layout: post
    title: Your Post Title
    categories: [Category1, Category2]
+   last-updated: YYYY-MM-DD
    ---
    ```
-3. If using images, create a corresponding directory: `_posts/YYYY-MM-DD-post-title/`
-4. Reference images in posts as: `![alt text](/_posts/YYYY-MM-DD-post-title/image.png)`
+3. If using images, create a corresponding directory: `media/post-title/`
+4. Reference images in posts as: `![alt text](/media/post-title/image.png)`
 
 ### Deployment
 

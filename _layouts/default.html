@@ -42,7 +42,7 @@ layout: compress
 {% endif %}
 
 <script>
-var POSTS=[{% for post in site.posts %}{"t":{{ post.title | jsonify }},"u":{{ site.url | append: post.url | jsonify }},"d":{{ post.date | date: "%B %e, %Y" | jsonify }},"e":{{ post.excerpt | strip_html | truncate: 120 | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}];
+var POSTS=[{% assign articles = site.articles | sort: 'last-updated' | reverse %}{% for post in articles %}{"t":{{ post.title | jsonify }},"u":{{ site.url | append: post.url | jsonify }},"d":{{ post['last-updated'] | date: "%B %e, %Y" | jsonify }},"e":{{ post.excerpt | strip_html | truncate: 120 | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}];
 (function(){
 var btn=document.getElementById('theme-btn');
 btn.addEventListener('click',function(){

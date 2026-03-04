@@ -42,3 +42,20 @@ table tr:nth-child(2n) {
     font-size: 0.82em;
     color: var(--muted)
 }
+
+.center {
+    text-align: center;
+}
+
+.instagram-media {
+    margin-left: auto !important;
+    margin-right: auto !important
+}
+
+.inaccessible {
+  background-color: #ffe4e1; /* light pink highlight */
+  color: #a00;              /* dark red text for contrast */
+  font-weight: bold;         /* optional: make it bold */
+  padding: 0 2px;            /* small padding so highlight isn’t cramped */
+  border-radius: 2px;        /* optional: slightly rounded corners */
+}

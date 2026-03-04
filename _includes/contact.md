@@ -1,7 +1,4 @@
 **Get in touch**
 
-* [GitHub][1]
-* [LinkedIn][2]
-
-[1]: https://github.com/Cutwell
-[2]: https://www.linkedin.com/in/zacharysmith5/
+* Check out my projects on [GitHub][https://github.com/Cutwell]
+* Or follow me on [LinkedIn][https://www.linkedin.com/in/zacharysmith5/]

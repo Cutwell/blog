@@ -11,14 +11,10 @@
             "id": "0bb5468ebb8b493e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_posts/2026-02-25-minecraft-agent-merlin.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2026-02-25-minecraft-agent-merlin"
+              "title": "New tab"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2026-02-25-minecraft-agent-merlin.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-02-25-minecraft-agent-merlin"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2026-02-25-minecraft-agent-merlin.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2026-02-25-minecraft-agent-merlin"
+              "title": "Outgoing links"
             }
           },
           {
@@ -156,13 +150,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2026-02-25-minecraft-agent-merlin.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2026-02-25-minecraft-agent-merlin"
+              "title": "Outline"
             }
           }
         ]
@@ -185,20 +178,36 @@
   },
   "active": "0bb5468ebb8b493e",
   "lastOpenFiles": [
-    "_site/_posts/2026-02-25-minecraft-agent-merlin/blockbench.webp",
-    "_posts/2026-02-25-minecraft-agent-merlin/blockbench.webp",
-    "_site/_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.13.38.webp",
-    "_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.13.38.webp",
-    "_site/_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.13.38.png",
-    "_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.13.38.png",
-    "_site/_posts/2026-02-25-minecraft-agent-merlin/creeper-wiki.webp",
-    "_posts/2026-02-25-minecraft-agent-merlin/creeper-wiki.webp",
-    "_site/_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.07.27.webp",
-    "_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.07.27.webp",
-    "_site/_posts/2026-02-25-minecraft-agent-merlin/Screenshot 2026-02-25 at 14.07.27.png",
-    "_posts/2026-02-25-minecraft-agent-merlin",
-    "_site/_posts/2026-02-25-",
-    "_posts/2026-02-25-/Unconfirmed 344183.crdownload",
-    "_posts/2026-02-25-"
+    "_site/media/storyscribbler-retro/frontcover.mp4",
+    "_site/media/storyscribbler-retro",
+    "media/storyscribbler-retro/frontcover.mp4",
+    "media/storyscribbler-retro",
+    "media/untitled folder",
+    "media/ai-art-vs-artists/DALL·E queen of hearts.png.sb-6b47066a-9bhDmK",
+    "media/ai-art-vs-artists/DALL·E alice.png.sb-6b47066a-xR2qnx",
+    "media/ai-art-vs-artists/DALL·E alice falling into computers.png.sb-6b47066a-Uc1ESZ",
+    "_site/media/spatial-data-boundary/plain.png",
+    "_site/media/spatial-data-boundary/outlined.png",
+    "_site/media/spatial-data-boundary/intersection59.png",
+    "_site/media/spatial-data-boundary/intersection100.png",
+    "_site/media/spatial-data-boundary/beachsolutions.png",
+    "_site/media/spatial-data-boundary/beachpareto.png",
+    "_site/media/spatial-data-boundary/beachempty.png",
+    "_site/media/spatial-data-boundary",
+    "_site/media/opportunity-rover-colourised/9.png",
+    "_site/media/opportunity-rover-colourised/8.png",
+    "_site/media/opportunity-rover-colourised/7.png",
+    "_site/media/opportunity-rover-colourised",
+    "_site/media/neural-network-augmentation",
+    "_posts/2026-02-25-minecraft-agent-merlin.md",
+    "_articles/storyscribbler-retro.md",
+    "_articles/spatial-data-boundary.md",
+    "_articles/opportunity-rover-colourised.md",
+    "_articles/neural-network-augmentation.md",
+    "_articles/minecraft-agent-merlin.md",
+    "_articles/canary-llm.md",
+    "_articles/ai-art-vs-artists.md",
+    "_site/_posts/2026-01-10-storyscribbler-retro.md",
+    "_posts/2026-01-10-storyscribbler-retro.md"
   ]
 }

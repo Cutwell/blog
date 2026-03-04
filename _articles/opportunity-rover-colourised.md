@@ -2,9 +2,10 @@
 layout: post
 title: Using neural networks to colourise images from the Opportunity Mars Rover.
 categories: [AI, Python]
+last-updated: 2021-08-01
 ---
 
-![figure 0](/_posts/2021-08-01-opportunity-rover-colourised/1.png "figure 0")
+![figure 0](/media/opportunity-rover-colourised/1.png "figure 0")
 
 On February 13, 2019, NASA officials declared the Opportunity mission complete, and the Mars Rover dead, after its solar panels buried beneath a dust storm on June 12, 2018, and it failed to make contact for 9 months.
 
@@ -24,28 +25,28 @@ This article is a primer on machine learning, and details the complete process o
 Neural networking was created as a way to understate the biology of the brain. Your brain is made up of a network of over 100 billion interconnected neurons, which interlink to form an advanced biological computer. 
 
 ## A biological neuron
-![figure 1](/_posts/2021-08-01-opportunity-rover-colourised/2.png "figure 1")
+![figure 1](/media/opportunity-rover-colourised/2.png "figure 1")
 
 Figure 1 describes a biological neuron or nerve cell. The nerve cell consists of several components - the synapses, which are lines of input from other cells, the dendrites, which collate the inputs from synapses into a combined signals, and the cell body, which can output its own signal when the total input signals meet a certain threshold. 
 
 There are two kinds of synapses, excitatory and inhibitory. Excitatory synapses promote neurons to fire, making their inputs larger than their original signal, while inhibitory synapses demote the signals they carry, diminishing their impact on whether the neuron fires or not.
 
 ## A simple artificial neuron
-![figure 2](/_posts/2021-08-01-opportunity-rover-colourised/3.png "figure 2")
+![figure 2](/media/opportunity-rover-colourised/3.png "figure 2")
 
 Figure 2 describes a simple artificial neuron, which is the building block of a neural network. You can observe many parallels between artificial and biological neurons, from the use of weights to inhibit or promote an input, to an activation threshold, determining when the neuron should give an output. 
 
 A single neuron will have multiple input neurons, either from the original input or from the previous layer in the network. Each input will be of different importance to the output of the neuron, represented by a weight, which could increase or decrease its value. The weight of an input is analogous to the the "excitatory" and "inhibitory" synapses in biological cells.
 
 ## A one-dimension network
-![figure 3](/_posts/2021-08-01-opportunity-rover-colourised/4.png "figure 3")
+![figure 3](/media/opportunity-rover-colourised/4.png "figure 3")
 
 The simplest neural network is a 1-dimensional network. In this network, inputs (in black) are directly mapped onto outputs (in white). 
 
 A number of problems can be solved with this method, but it is is severely limited by its lack of complexity. For instance, it is unable to solve XOR problems.
 
 ## A two-dimension network
-![figure 4](/_posts/2021-08-01-opportunity-rover-colourised/5.png "figure 4")
+![figure 4](/media/opportunity-rover-colourised/5.png "figure 4")
 
 The 2-dimensional network is much more complex, and allows us to solve more complex problems.
 
@@ -63,15 +64,15 @@ Neural networks require a lot of data. There's generally no such thing as too mu
 
 Formally, what we're looking to achieve is to create a neural network which uses supervised learning to teach a network to identify non-linear relationships between colour images and greyscale images, based on the composition of the input and labelled output images, in order to predict colourised outputs from unlabelled input data. 
 
-![figure 5](/_posts/2021-08-01-opportunity-rover-colourised/6.png "figure 5")
+![figure 5](/media/opportunity-rover-colourised/6.png "figure 5")
 
 Colour images typically use 3 values per pixel; the Red, Green and Blue channels. Greyscale images, however, only use 1 value per pixel; the Grey/Light channel. 
 
-![figure 6](/_posts/2021-08-01-opportunity-rover-colourised/7.png "figure 6")
+![figure 6](/media/opportunity-rover-colourised/7.png "figure 6")
 
 For example, figure 6 shows how a colour image of a glacier can be divided into three channels of red, green and blue, which when combined produce the full image.
 
-![figure 7](/_posts/2021-08-01-opportunity-rover-colourised/8.png "figure 7")
+![figure 7](/media/opportunity-rover-colourised/8.png "figure 7")
 
 Further, figure 7 demonstrates how a full colour image compares to a grey-scaled version. Note how the colour is lost, but the light/dark balance of the image is retained.
 
@@ -131,7 +132,7 @@ Side note: [FloydHub is shutting down](https://www.floydhub.com/shutdown). As of
 
 # Colourising the Opportunity Rover.
 
-![figure 8](/_posts/2021-08-01-opportunity-rover-colourised/9.png "figure 8")
+![figure 8](/media/opportunity-rover-colourised/9.png "figure 8")
 
 After a complete model was trained, all that remained was to test it upon the Opportunity Rover dataset and analyse the results. It was interesting to see in what areas the network excelled, and where it lacked.
 

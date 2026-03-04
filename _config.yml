@@ -45,6 +45,11 @@ google-site-verification: # add your verification token here (https://developers
 ##### JEKYLL SETTINGS #####
 permalink: /:title/
 
+collections:
+  articles:
+    output: true
+    permalink: /:title/
+
 plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
@@ -52,7 +57,7 @@ plugins:
   - jekyll-brotli # Google compression that outperforms Zopfli, and has good support (although less than .gz, hence using both to provice fallback)
   - anti_image_reflow # prevent page reflow while lazy-loading images
 
-include: ['_posts']
+include: []
 
 kramdown:
   # Use GitHub flavored markdown, including triple backtick fenced code blocks

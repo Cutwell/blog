@@ -3,6 +3,7 @@ layout: python
 title: Canary - A framework for detecting prompt injection attacks.
 categories:
   - AI
+last-updated: 2023-10-23
 ---
 
 ## Overview
