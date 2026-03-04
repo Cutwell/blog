@@ -37,7 +37,8 @@ home-link-text: ← Home # text used for home link displayed on posts when home-
 
 # domain URL (use https to enforce SSL)
 # if website root is at subdirectory of domain URL (e.g.: "https://cutwell.github.io/mywebsite"), then write that URL here
-url: https://cutwell.github.io/blog
+url: https://cutwell.github.io
+baseurl: /blog
 
 google-site-verification: # add your verification token here (https://developers.google.com/site-verification/)
 
@@ -74,6 +75,7 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - .lazy-cache
 
 # use https://github.com/penibelst/jekyll-compress-html for extra bandwidth compression
 compress_html:

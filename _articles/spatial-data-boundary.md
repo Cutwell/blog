@@ -5,7 +5,7 @@ categories: [Python]
 last-updated: 2022-07-28
 ---
 
-![](/media/spatial-data-boundary/outlined.png)
+![]({{ site.baseurl }}/media/spatial-data-boundary/outlined.png)
 
 I want to talk about a unique problem of applying genetic optimisation to unusual search spaces. For my dissertation, I'm investigating a large section of seascape, off the East coast of England, to identify optimal sites for offshore wind farms (OWFs). I've been acquiring bathymetric data (depth of the sea at recorded points) as OWFs have a maximum depth for sinking pylons, apparently between 25-40m). 
 
@@ -13,7 +13,7 @@ I want to talk about a unique problem of applying genetic optimisation to unusua
 
 The search space is restricted in shape to complement the available depth data, resulting in this unusual shape:
 
-![irregularly shaped heatmap of sea floor off the east coast of England](/media/spatial-data-boundary/plain.png).
+![irregularly shaped heatmap of sea floor off the east coast of England]({{ site.baseurl }}/media/spatial-data-boundary/plain.png).
 
 The irregular shape isn't problematic itself - there is plenty of space within the boundary to optimise - but what is an issue is that is is difficult to restrict our optimiser to only finding solutions within the known search space.
 
@@ -28,17 +28,17 @@ Our beach is the search space - we can pick any point and say how good / bad it 
 
 Illustrating this beach, it might look like this (red dots are people we want to avoid):
 
-![yellow beach with red dots indicating people](/media/spatial-data-boundary/beachempty.png)
+![yellow beach with red dots indicating people]({{ site.baseurl }}/media/spatial-data-boundary/beachempty.png)
 
 We can apply a popular genetic algorithm "Nondominated Sorting Genetic Algorithm II" (NSGAII) to this problem. The purpose of this algorithm is to search our search space and find solutions that are equally as good as each other. In other words, one solution might be 10% quicker to reach, but only 2M from another person, whilst another might be 10% slower to reach, but 2.2M from another person. These two solutions are equally as good, since we didn't specify one objective as having precedence over another, so we consider them "mutually nondominating". NSGAII will attempt to create a population of solutions that are all mutually nondominating, giving maximum choice to balance our objectives as we choose.
 
 Plotting theses solutions according to their objective scores can identify the pareto front - a shape defining all nondominating solutions:
 
-![the pareto front for the beach problem](/media/spatial-data-boundary/beachpareto.png)
+![the pareto front for the beach problem]({{ site.baseurl }}/media/spatial-data-boundary/beachpareto.png)
 
 We can plot these solutions on our beach, to identify the best places to sit:
 
-![yellow beach with a selection of spots to sit, in green](/media/spatial-data-boundary/beachsolutions.png)
+![yellow beach with a selection of spots to sit, in green]({{ site.baseurl }}/media/spatial-data-boundary/beachsolutions.png)
 
 Each solution (in green) is a unique balance of distance from the entrance to the beach (at coordinates (0,5)) whilst avoiding sitting near other people (in red). The best solutions draw lines straight towards the entrance, as we want to minimise this objective, and shy away from the roughly diagonal spread of people (as we're maximising our distance).
 
@@ -58,7 +58,7 @@ For our site selection, we need a more nuanced approach, as a solution may only 
 ## Concave hulls
 Our search space has an irregular shape:
 
-![](/media/spatial-data-boundary/plain.png)
+![]({{ site.baseurl }}/media/spatial-data-boundary/plain.png)
 
 Defining the shape of this collection of spatial data points is expensive, as we need to process 2.2 million data points, meaning the solution must be memory efficient.
 
@@ -66,15 +66,15 @@ I initially approached this problem considering methods to remove interior data 
 
 Our final boundary was an approximation of the search space shape:
 
-![](/media/spatial-data-boundary/outlined.png)
+![]({{ site.baseurl }}/media/spatial-data-boundary/outlined.png)
 
 This boundary isn't perfect, however it is more than accurate enough to allow us to properly determine overlap between our search space and solutions:
 
-![](/media/spatial-data-boundary/intersection59.png)
+![]({{ site.baseurl }}/media/spatial-data-boundary/intersection59.png)
 
 As above, by determing intersection % between our search space and solutions, we can encourage solutions to explore only inside the space:
 
-![](/media/spatial-data-boundary/intersection100.png)
+![]({{ site.baseurl }}/media/spatial-data-boundary/intersection100.png)
 
 ---
 

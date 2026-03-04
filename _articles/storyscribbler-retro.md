@@ -8,7 +8,7 @@ last-updated: 2026-01-10
 
 <div style="width:100%; aspect-ratio:16/9;">
   <video 
-    src="/media/storyscribbler-retro/frontcover.mp4"
+    src="{{ site.baseurl }}/media/storyscribbler-retro/frontcover.mp4"
     style="width:100%; height:100%; object-fit:fit;"
     autoplay muted loop playsinline>
   </video>

@@ -19,5 +19,5 @@ Solo developer @ [StoryScribbler](https://storyscribbler.com/)
 _Sometimes I write about technology and sci-fi:_
 {% if site.compression.blogs and site.articles %}
 {% assign articles = site.articles | sort: 'last-updated' | reverse %}
-<table class="post-list">{% for post in articles %}<tr><td><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></td></tr>{% endfor %}</table>
+<table class="post-list">{% for post in articles %}<tr><td><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></td></tr>{% endfor %}</table>
 {% endif %}

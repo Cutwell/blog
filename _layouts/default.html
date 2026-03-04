@@ -8,7 +8,7 @@ layout: compress
 {% endif %}
 
 <nav class="navbar">
-  <a class="nav-logo" href="{{ site.url }}">ᛉ</a>
+  <a class="nav-logo" href="{{ site.baseurl }}/">ᛉ</a>
   <div class="nav-icons">
     <button class="nav-btn" id="search-btn" aria-label="Search">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -42,7 +42,7 @@ layout: compress
 {% endif %}
 
 <script>
-var POSTS=[{% assign articles = site.articles | sort: 'last-updated' | reverse %}{% for post in articles %}{"t":{{ post.title | jsonify }},"u":{{ site.url | append: post.url | jsonify }},"d":{{ post['last-updated'] | date: "%B %e, %Y" | jsonify }},"e":{{ post.excerpt | strip_html | truncate: 120 | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}];
+var POSTS=[{% assign articles = site.articles | sort: 'last-updated' | reverse %}{% for post in articles %}{"t":{{ post.title | jsonify }},"u":{{ post.url | absolute_url | jsonify }},"d":{{ post['last-updated'] | date: "%B %e, %Y" | jsonify }},"e":{{ post.excerpt | strip_html | truncate: 120 | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}];
 (function(){
 var btn=document.getElementById('theme-btn');
 btn.addEventListener('click',function(){
@@ -82,7 +82,44 @@ document.getElementById("lt").innerHTML="Load time: "+(window.performance.timing
 }
 };
 {% endif %}
-document.querySelectorAll("img").forEach(function(img){img.setAttribute("loading","lazy")});
+(function(){
+var obs=('IntersectionObserver' in window)?new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(!entry.isIntersecting)return;
+var c=entry.target;obs.unobserve(c);
+var img=c.querySelector('.lazy-img[data-src]');
+if(img){
+var s=c.querySelector('.lazy-spinner');
+var full=new Image();
+full.onload=function(){img.src=full.src;img.classList.remove('lazy-loading','lazy-no-lqip');img.classList.add('lazy-loaded');if(s)s.classList.add('lazy-hidden');};
+full.onerror=function(){img.classList.remove('lazy-loading','lazy-no-lqip');img.classList.add('lazy-loaded');if(s)s.classList.add('lazy-hidden');};
+full.src=img.dataset.src;
+}
+var vid=c.querySelector('.lazy-video[data-src],.lazy-video');
+if(vid){
+var s2=c.querySelector('.lazy-spinner');
+vid.querySelectorAll('source[data-src]').forEach(function(src){src.setAttribute('src',src.dataset.src);src.removeAttribute('data-src');});
+if(vid.dataset.src){vid.setAttribute('src',vid.dataset.src);vid.removeAttribute('data-src');}
+vid.load();
+vid.addEventListener('canplay',function(){if(s2)s2.classList.add('lazy-hidden');},{once:true});
+}
+});
+},{rootMargin:'200px 0px'}):null;
+document.querySelectorAll('.lazy-media-container').forEach(function(c){
+if(obs){obs.observe(c);}
+else{
+var img=c.querySelector('.lazy-img[data-src]');
+if(img){img.src=img.dataset.src;img.classList.remove('lazy-loading','lazy-no-lqip');img.classList.add('lazy-loaded');}
+var vid=c.querySelector('.lazy-video');
+if(vid){
+vid.querySelectorAll('source[data-src]').forEach(function(s){s.setAttribute('src',s.dataset.src);s.removeAttribute('data-src');});
+if(vid.dataset.src){vid.setAttribute('src',vid.dataset.src);vid.removeAttribute('data-src');}
+vid.load();
+}
+c.querySelector('.lazy-spinner')&&c.querySelector('.lazy-spinner').classList.add('lazy-hidden');
+}
+});
+})();
 document.querySelectorAll('a[href^="http"]').forEach(function(a){
 if(a.classList.contains('nav-logo'))return;
 try{

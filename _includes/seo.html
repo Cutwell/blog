@@ -12,17 +12,17 @@ IMG / MEDIA: allow from any domain
 <meta http-equiv='Content-Security-Policy' content="default-src 'self' ; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' *; media-src 'self' *;">
 
 <!-- sitemap and rss feed -->
-<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.url }}">
-<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ '/sitemap.xml' | prepend: site.url }}" />
-<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | absolute_url }}">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ '/sitemap.xml' | absolute_url }}" />
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
 <!-- Google site verification -->
 <meta name="google-site-verification" content="{{ site.google-site-verification }}" />
 
 <!-- Facebook integration -->
 <meta property="og:title" content="{{ page.title }}"/>
-{% if page.image %}<meta property="og:image" content="{{ page.image | prepend: site.url }}"/>{% endif %}
-<meta property="og:url" content="{{ page.url | prepend: site.url }}"/>
+{% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}"/>{% endif %}
+<meta property="og:url" content="{{ page.url | absolute_url }}"/>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="{{ site.name }}"/>
 <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"/>
@@ -41,6 +41,6 @@ IMG / MEDIA: allow from any domain
 {% endfor %}
 {% endif %}
 <meta name="twitter:title" content="{{ page.title }}" />
-{% if page.image %}<meta name="twitter:image" content="{{ site.url }}{{ page.image }}" />{% endif %}
-<meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+{% if page.image %}<meta name="twitter:image" content="{{ page.image | absolute_url }}" />{% endif %}
+<meta name="twitter:url" content="{{ page.url | absolute_url }}" />
 <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />

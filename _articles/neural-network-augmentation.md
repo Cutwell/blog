@@ -5,7 +5,7 @@ categories: [Machine Learning, Python]
 last-updated: 2022-07-27
 ---
 
-![](/media/neural-network-augmentation/wind.png)
+![]({{ site.baseurl }}/media/neural-network-augmentation/wind.png)
 
 My current dissertation project focusses on genetic optimisation of offshore wind farm site locations. Part of this optimisation is to maximise the energy efficiency of the wind farm, by maximising the available potential wind energy within the site. As I was focussing on a search space just off the U.K. east coast, I needed to gather historic wind data that fit this area.
 
@@ -15,11 +15,11 @@ An issue I encountered whilst researching datasets for this project was that the
 
 At a global scale, the data looked suitably expansive:
 
-![](/media/neural-network-augmentation/wind_world.png)
+![]({{ site.baseurl }}/media/neural-network-augmentation/wind_world.png)
 
 But when zoomed into our search space, the resolution was clearly insufficient:
 
-![](/media/neural-network-augmentation/wind_uk.png)
+![]({{ site.baseurl }}/media/neural-network-augmentation/wind_uk.png)
 
 ---
 
@@ -63,16 +63,16 @@ When asked to emulate the dataset, in order to test if spatial relationships wer
 
 | | |
 |:---:|:---:|
-| ![](/media/neural-network-augmentation/wind_plot.png) | ![](/media/neural-network-augmentation/wind_pred_plot.png) |
+| ![]({{ site.baseurl }}/media/neural-network-augmentation/wind_plot.png) | ![]({{ site.baseurl }}/media/neural-network-augmentation/wind_pred_plot.png) |
 | Training dataset | Model prediction |
 
 We then applied the model to predict wind data specifically for our search space, at the same resolution as our bathymetric data:
 
 | | |
 |:---:|:---:|
-| ![](/media/neural-network-augmentation/bathymetric.png) | ![](/media/neural-network-augmentation/wind.png) |
+| ![]({{ site.baseurl }}/media/neural-network-augmentation/bathymetric.png) | ![]({{ site.baseurl }}/media/neural-network-augmentation/wind.png) |
 | Bathymetric data | Wind data |
-| ![](/media/neural-network-augmentation/bathymetric_zoomed.png) | ![](/media/neural-network-augmentation/wind_zoomed.png) |
+| ![]({{ site.baseurl }}/media/neural-network-augmentation/bathymetric_zoomed.png) | ![]({{ site.baseurl }}/media/neural-network-augmentation/wind_zoomed.png) |
 | Zoomed Bathymetric data | Zoomed Wind data |
 
 ---

@@ -427,3 +427,76 @@ pre code {
     border-color: var(--pill-fg);
     color: var(--pill-fg)
 }
+
+.lazy-media-container {
+    position: relative;
+    display: block;
+    margin: 1.5em auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+    background: var(--code-bg)
+}
+
+[data-theme=dark] .lazy-media-container {
+    box-shadow: 0 2px 16px rgba(0,0,0,0.45)
+}
+
+.lazy-video-container {
+    min-height: 120px
+}
+
+.lazy-media-container img,
+.lazy-media-container video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transition: filter 0.5s ease, transform 0.5s ease, opacity 0.4s ease
+}
+
+[data-theme=dark] .lazy-media-container img,
+[data-theme=dark] .lazy-media-container video {
+    box-shadow: none
+}
+
+.lazy-img.lazy-loading {
+    filter: blur(12px);
+    transform: scale(1.08)
+}
+
+.lazy-img.lazy-loaded {
+    filter: none;
+    transform: none;
+    opacity: 1
+}
+
+.lazy-img.lazy-no-lqip {
+    opacity: 0
+}
+
+.lazy-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid rgba(127,127,127,0.2);
+    border-top-color: rgba(127,127,127,0.7);
+    animation: lazy-spin 0.75s linear infinite;
+    pointer-events: none;
+    z-index: 2
+}
+
+.lazy-spinner.lazy-hidden {
+    display: none
+}
+
+@keyframes lazy-spin {
+    to { transform: translate(-50%, -50%) rotate(360deg) }
+}
