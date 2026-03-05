@@ -27,7 +27,6 @@ layout: compress
   </div>
 </div>
 
-<main>
 {{ content }}
 
 {% if page.layout != 'post'  %}
@@ -41,7 +40,6 @@ layout: compress
 {% if site.compression.page-size %}
 <i id="ps" class="d"></i>
 {% endif %}
-</main>
 
 <script>
 var POSTS=[{% assign articles = site.articles | sort: 'last-updated' | reverse %}{% for post in articles %}{"t":{{ post.title | jsonify }},"u":{{ post.url | absolute_url | jsonify }},"d":{{ post['last-updated'] | date: "%B %e, %Y" | jsonify }},"e":{{ post.excerpt | strip_html | truncate: 120 | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}];
@@ -122,4 +120,16 @@ c.querySelector('.lazy-spinner')&&c.querySelector('.lazy-spinner').classList.add
 }
 });
 })();
+document.querySelectorAll('a[href^="http"]').forEach(function(a){
+if(a.classList.contains('nav-logo'))return;
+try{
+var u=new URL(a.href);
+if(u.hostname===location.hostname)return;
+var i=document.createElement('img');
+i.src='https://www.google.com/s2/favicons?domain='+u.hostname+'&sz=64';
+i.className='link-favicon';
+i.setAttribute('aria-hidden','true');
+a.insertBefore(i,a.firstChild);
+}catch(e){}
+});
 </script>
