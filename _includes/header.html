@@ -16,10 +16,10 @@
 
 <!-- generate for your own icon using https://realfavicongenerator.net/ -->
 {% if site.compression.favicon %}
-<link rel="icon" type="image/svg+xml" href="{{ site.url }}/favicon.svg">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ site.icon-64x64 | prepend: site.url }}">
-<link rel="manifest" href="{{ site.manifest | prepend: site.url }}">
-<link rel="mask-icon" href="{{ site.mask-icon.href | prepend: site.url }}" color="{{ site.mask-icon.color }}">
+<link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | absolute_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ site.icon-64x64 | absolute_url }}">
+<link rel="manifest" href="{{ site.manifest | absolute_url }}">
+<link rel="mask-icon" href="{{ site.mask-icon.href | absolute_url }}" color="{{ site.mask-icon.color }}">
 <meta name="msapplication-TileColor" content="{{ site.msapplication-TileColor }}">
 <meta name="theme-color" content="{{ site.theme-color }}">
 {% else %}
