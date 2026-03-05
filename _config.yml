@@ -76,7 +76,6 @@ exclude:
   - README.md
   - CNAME
   - .lazy-cache
-  - .favicon-cache
 
 # use https://github.com/penibelst/jekyll-compress-html for extra bandwidth compression
 compress_html:
