@@ -87,6 +87,7 @@ end
 Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   next unless doc.output_ext == '.html'
   next if doc.output.nil? || doc.output.empty?
+
   site = doc.site
   baseurl = (site.baseurl || '').chomp('/')
   parsed = Nokogiri::HTML.parse(doc.output)
