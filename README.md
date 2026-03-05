@@ -8,13 +8,9 @@ LangChain tutorials @ [YouTube](https://www.youtube.com/@cutwell946)
 
 Solo developer @ [StoryScribbler](https://storyscribbler.com/)
 
-* [GitHub][1]
-* [LinkedIn][2]
+<br>
 
-[1]: https://github.com/Cutwell
-[2]: https://www.linkedin.com/in/zacharysmith5/
-
-_Sometimes I write about technology and sci-fi:_
+*Sometimes I write about technology and sci-fi*:
 <!--START_SECTION:feed-->
 * [Canary - A framework for detecting prompt injection attacks.](https:&#x2F;&#x2F;cutwell.github.io&#x2F;blog&#x2F;&#x2F;canary-llm&#x2F;)
 * [🦓 Can GPT-4 solve a logic puzzle?](https:&#x2F;&#x2F;cutwell.github.io&#x2F;blog&#x2F;&#x2F;zebra-problem&#x2F;)

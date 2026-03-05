@@ -129,6 +129,19 @@ blockquote {
     color: var(--link)
 }
 
+.post-list-year {
+    padding-top: 1.1em;
+    font-size: 0.78em;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase
+}
+
+.post-list tr:has(.post-list-year) {
+    border-bottom: none
+}
+
 img {
     max-width: 100%;
     height: auto;

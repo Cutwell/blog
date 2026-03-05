@@ -11,13 +11,10 @@ LangChain tutorials @ [YouTube](https://www.youtube.com/@cutwell946)
 
 Solo developer @ [StoryScribbler](https://storyscribbler.com/)
 
-*Get in touch*
+<br>
 
-* Check out my projects on [GitHub](https://github.com/Cutwell)
-* Or follow me on [LinkedIn](https://www.linkedin.com/in/zacharysmith5/)
-
-_Sometimes I write about technology and sci-fi:_
+*Sometimes I write about technology and sci-fi*:
 {% if site.compression.blogs and site.articles %}
 {% assign articles = site.articles | sort: 'last-updated' | reverse %}
-<table class="post-list">{% for post in articles %}<tr><td><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></td></tr>{% endfor %}</table>
+<table class="post-list">{% assign current_year = '' %}{% for post in articles %}{% assign post_year = post['last-updated'] | date: "%Y" %}{% if post_year != current_year %}{% assign current_year = post_year %}<tr><td class="post-list-year">{{ post_year }}</td></tr>{% endif %}<tr><td><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></td></tr>{% endfor %}</table>
 {% endif %}
