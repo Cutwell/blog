@@ -1,0 +1,12 @@
+/* TEAM */
+Theme Developer: Zachary Smith.
+Site: https://github.com/Cutwell
+
+/* THANKS */
+
+
+/* SITE */
+Last update: 01/2026
+Standards: HTML5, CSS3
+Components:
+Software: Jekyll theme for minimalist blog posting.

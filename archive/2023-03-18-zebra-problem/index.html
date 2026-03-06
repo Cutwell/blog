@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🦓 Can GPT-4 solve a logic puzzle?</title>
+<link rel="icon" type="image/svg+xml" href="https://cutwell.github.io/blog/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cutwell.github.io/blog/icon.png">
+<link rel="manifest" href="https://cutwell.github.io/blog/site.webmanifest">
+<link rel="mask-icon" href="https://cutwell.github.io/blog/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Personal blog by Zachary — writing about AI, machine learning, technology, and sci-fi.">
+<link rel="alternate" type="application/rss+xml" title="Zachary's Blog" href="https://cutwell.github.io/blog/feed.xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://cutwell.github.io/blog/sitemap.xml">
+<link rel="canonical" href="https://cutwell.github.io/blog/archive/2023-03-18-zebra-problem/">
+<meta name="google-site-verification" content="">
+<meta property="og:title" content="🦓 Can GPT-4 solve a logic puzzle?">
+<meta property="og:url" content="https://cutwell.github.io/blog/archive/2023-03-18-zebra-problem/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Zachary's Blog">
+<meta property="og:description" content="Personal blog by Zachary — writing about AI, machine learning, technology, and sci-fi.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="🦓 Can GPT-4 solve a logic puzzle?">
+<meta name="twitter:url" content="https://cutwell.github.io/blog/archive/2023-03-18-zebra-problem/">
+<meta name="twitter:description" content="Personal blog by Zachary — writing about AI, machine learning, technology, and sci-fi."> <script>(function(){var t=localStorage.getItem('theme');if(t==='dark'||(t===null&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}})();</script><style>@import url(https://fonts.bunny.net/css?family=open-sans:400); :root { --bg: #fff; --fg: #111; --muted: #767676; --link: #1e66f0; /* Catppuccin Latte Blue */ --nav-bg: rgba(255,255,255,0.97); --nav-border: rgba(0,0,0,0.06); --btn-hover: rgba(0,0,0,0.06); --overlay-bg: rgba(0,0,0,0.4); --modal-bg: rgba(255,255,255,0.96); --modal-border: rgba(0,0,0,0.09); --result-hover: rgba(0,0,0,0.05); --result-border: rgba(0,0,0,0.07); --table-border: #d0d7de; --table-stripe: #f6f8fa; --code-bg: #f6f8fa; --code-border: rgba(0,0,0,0.08); --code-fg: #1f2328; --pill-fg: #8839ef; /* Catppuccin Latte Mauve */ --pill-bg: rgba(136,57,239,0.06); --pill-border: rgba(136,57,239,0.28) } [data-theme=dark] { --bg: #1c1f26; --fg: #dde1e7; --muted: #7d8491; --link: #89b4fa; /* Catppuccin Mocha Blue */ --nav-bg: rgba(28,31,38,0.97); --nav-border: rgba(255,255,255,0.05); --btn-hover: rgba(255,255,255,0.07); --overlay-bg: rgba(0,0,0,0.55); --modal-bg: rgba(14,16,21,0.97); --modal-border: rgba(255,255,255,0.08); --result-hover: rgba(255,255,255,0.06); --result-border: rgba(255,255,255,0.06); --table-border: #2e3340; --table-stripe: #181b22; --code-bg: #161b22; --code-border: rgba(255,255,255,0.08); --code-fg: #e6edf3; --pill-fg: #cba6f7; /* Catppuccin Mocha Mauve */ --pill-bg: rgba(203,166,247,0.08); --pill-border: rgba(203,166,247,0.28) } html { background: var(--bg) } body { max-width: 80ch; padding: 5em 1em 3em; margin: auto; line-height: 1.6; font-size: 1.25em; font-family: 'Open Sans', sans-serif; color: var(--fg) } a { color: var(--link) } .d { font-size: medium; color: var(--muted) } h1 { font-size: 1.8em; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin: 0.4em 0 0.2em } h2 { font-size: 1.2em; font-weight: 600; line-height: 1.3; margin: 1.75em 0 0.4em } h3 { font-size: 1em; font-weight: 600; margin: 1.5em 0 0.3em } hr { border: none; border-top: 1px solid var(--table-border); margin: 2em 0 } blockquote { border-left: 3px solid var(--table-border); margin: 1.5em 0; padding: 0.4em 1em; color: var(--muted) } .post-list { width: 100%; border-collapse: collapse; margin-top: 0.5em } .post-list td { padding: 0.45em 0; vertical-align: baseline } .post-list tr { border-bottom: 1px solid var(--table-border) } .post-list tr:last-child { border-bottom: none } .post-list a { color: var(--fg); text-decoration: none } .post-list a:hover { color: var(--link) } .post-list-year { padding-top: 1.1em; font-size: 0.78em; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase } .post-list tr:has(.post-list-year) { border-bottom: none } img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 8px; box-shadow: 0 2px 16px rgba(0,0,0,0.1) } h1 img, h2 img, h3 img { display: inline; height: 1em; width: auto; margin: 0 0 0 0.3em; border-radius: 3px; box-shadow: none; vertical-align: middle } .link-favicon { display: inline-block; width: 0.85em; height: 0.85em; vertical-align: 0em; margin: 0 0.25em 0 0; border-radius: 2px; box-shadow: none } [data-theme=dark] img { box-shadow: 0 2px 16px rgba(0,0,0,0.45) } pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 8px; padding: 1em 1.25em; overflow: auto; line-height: 1.5; margin: 1.5em 0 } code { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 0.85em; background: var(--code-bg); color: var(--code-fg); border: 1px solid var(--code-border); border-radius: 4px; padding: 0.15em 0.4em } pre code { background: none; border: none; padding: 0; border-radius: 0; font-size: 1em; color: var(--code-fg) } .highlight { border-radius: 8px; overflow: hidden; margin: 1.5em 0 } .highlight pre { margin: 0; border: none; border-radius: 0 } /* Syntax token colors — light mode (Catppuccin Latte) */ .highlight .c,.highlight .c1,.highlight .cm,.highlight .cs,.highlight .cp { color: #8c8fa1 } .highlight .k,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr,.highlight .kc { color: #8839ef } .highlight .kt { color: #df8e1d } .highlight .s,.highlight .s1,.highlight .s2,.highlight .sa,.highlight .sb,.highlight .sc,.highlight .dl { color: #40a02b } .highlight .m,.highlight .mi,.highlight .mf,.highlight .mh,.highlight .mo,.highlight .il { color: #fe640b } .highlight .nf,.highlight .fm { color: #1e66f0 } .highlight .nc { color: #df8e1d } .highlight .nb { color: #179299 } .highlight .nt { color: #d20f39 } .highlight .na { color: #179299 } .highlight .o,.highlight .ow { color: #04a5e5 } .highlight .gd { color: #d20f39; background: rgba(210,15,57,0.1) } .highlight .gi { color: #40a02b; background: rgba(64,160,43,0.1) } /* Syntax token colors — dark mode (Catppuccin Mocha) */ [data-theme=dark] .highlight .c,[data-theme=dark] .highlight .c1,[data-theme=dark] .highlight .cm,[data-theme=dark] .highlight .cs,[data-theme=dark] .highlight .cp { color: #7f849c } [data-theme=dark] .highlight .k,[data-theme=dark] .highlight .kd,[data-theme=dark] .highlight .kn,[data-theme=dark] .highlight .kp,[data-theme=dark] .highlight .kr,[data-theme=dark] .highlight .kc { color: #cba6f7 } [data-theme=dark] .highlight .kt { color: #f9e2af } [data-theme=dark] .highlight .s,[data-theme=dark] .highlight .s1,[data-theme=dark] .highlight .s2,[data-theme=dark] .highlight .sa,[data-theme=dark] .highlight .sb,[data-theme=dark] .highlight .sc,[data-theme=dark] .highlight .dl { color: #a6e3a1 } [data-theme=dark] .highlight .m,[data-theme=dark] .highlight .mi,[data-theme=dark] .highlight .mf,[data-theme=dark] .highlight .mh,[data-theme=dark] .highlight .mo,[data-theme=dark] .highlight .il { color: #fab387 } [data-theme=dark] .highlight .nf,[data-theme=dark] .highlight .fm { color: #89b4fa } [data-theme=dark] .highlight .nc { color: #f9e2af } [data-theme=dark] .highlight .nb { color: #94e2d5 } [data-theme=dark] .highlight .nt { color: #f38ba8 } [data-theme=dark] .highlight .na { color: #94e2d5 } [data-theme=dark] .highlight .o,[data-theme=dark] .highlight .ow { color: #89dceb } [data-theme=dark] .highlight .gd { color: #f38ba8; background: rgba(243,139,168,0.15) } [data-theme=dark] .highlight .gi { color: #a6e3a1; background: rgba(166,227,161,0.1) } .hero { position: relative; height: 28vh; min-height: 180px; border-radius: 12px; overflow: hidden; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; margin-bottom: 2em } .hero-glass { position: absolute; inset: 0; background: rgba(255,255,255,0.12); backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px) } [data-theme=dark] .hero-glass { background: rgba(0,0,0,0.18) } .hero-rune { position: relative; z-index: 1; font-size: 8rem; line-height: 1; color: rgba(255,255,255,0.92); text-shadow: 0 2px 30px rgba(0,0,0,0.5) } .navbar { position: fixed; top: 0; left: 0; right: 0; height: 48px; display: flex; align-items: center; justify-content: space-between; padding: 0 2em; background: var(--nav-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 100; box-sizing: border-box } .nav-logo { font-size: 1.4em; text-decoration: none; color: var(--fg) } .nav-icons { display: flex; gap: 4px } .nav-btn { background: none; border: none; cursor: pointer; padding: 7px; color: var(--fg); display: flex; align-items: center; border-radius: 7px; transition: background 0.15s } .nav-btn:hover { background: var(--btn-hover) } .nav-btn svg { width: 19px; height: 19px } #icon-sun { display: none } [data-theme=dark] #icon-sun { display: block } [data-theme=dark] #icon-moon { display: none } .search-overlay { display: none; position: fixed; inset: 0; background: var(--overlay-bg); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); z-index: 200; justify-content: center; padding-top: 72px; box-sizing: border-box } .search-overlay.open { display: flex } .search-modal { background: var(--modal-bg); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--modal-border); border-radius: 14px; width: min(580px, 92vw); max-height: 68vh; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 8px 32px rgba(0,0,0,0.18) } #search-input { border: none; outline: none; background: transparent; padding: 0.9em 1.1em; font-size: 1em; width: 100%; color: var(--fg); border-bottom: 1px solid var(--modal-border); box-sizing: border-box; font-family: 'Open Sans', sans-serif; } #search-results { overflow-y: auto } .search-result { border-bottom: 1px solid var(--result-border) } .search-result a { display: block; padding: 0.65em 1.1em; text-decoration: none; color: var(--fg) } .search-result a:hover { background: var(--result-hover) } .search-result-title { font-size: 0.95em; font-weight: 600 } .search-result-date { font-size: 0.75em; color: var(--muted); margin-top: 2px } .search-no-results { padding: 1.1em; color: var(--muted); text-align: center; font-size: 0.9em } .pill { display: inline-block; background: transparent; border: 1px solid var(--table-border); border-radius: 999px; padding: 0.1em 0.6em; font-size: 0.82em; text-decoration: none; color: var(--fg); white-space: nowrap; transition: border-color 0.18s, color 0.18s } .pill:hover { border-color: var(--pill-fg); color: var(--pill-fg) } .lazy-media-container { position: relative; display: block; margin: 1.5em auto; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.1); background: var(--code-bg) } [data-theme=dark] .lazy-media-container { box-shadow: 0 2px 16px rgba(0,0,0,0.45) } .lazy-video-container { min-height: 120px } .lazy-media-container img, .lazy-media-container video { display: block; width: 100%; height: auto; max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; transition: filter 0.5s ease, transform 0.5s ease, opacity 0.4s ease } [data-theme=dark] .lazy-media-container img, [data-theme=dark] .lazy-media-container video { box-shadow: none } .lazy-img.lazy-loading { filter: blur(12px); transform: scale(1.08) } .lazy-img.lazy-loaded { filter: none; transform: none; opacity: 1 } .lazy-img.lazy-no-lqip { opacity: 0 } .lazy-spinner { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 24px; height: 24px; border-radius: 50%; border: 2px solid rgba(127,127,127,0.2); border-top-color: rgba(127,127,127,0.7); animation: lazy-spin 0.75s linear infinite; pointer-events: none; z-index: 2 } .lazy-spinner.lazy-hidden { display: none } @keyframes lazy-spin { to { transform: translate(-50%, -50%) rotate(360deg) } }</style>
+<nav class="navbar"> <a class="nav-logo" href="/blog/">ᛉ</a><div class="nav-icons"> <button class="nav-btn" id="search-btn" aria-label="Search"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg> </button> <button class="nav-btn" id="theme-btn" aria-label="Toggle theme"> <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg> <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"></path></svg> </button>
+</div></nav>
+</head>
+<body>
+<div class="search-overlay" id="search-overlay"><div class="search-modal"> <input type="text" id="search-input" placeholder="Search posts…" autocomplete="off"><div id="search-results"></div>
+</div></div>
+<style>table { border-spacing: 0; border-collapse: collapse; width: 100%; margin: 1.5em 0 } table th, table td { padding: 8px 13px; border: 1px solid var(--table-border) } table th { background: var(--table-stripe); font-weight: 600 } table tr { border-top: 1px solid var(--table-border) } table tr:nth-child(2n) { background-color: var(--table-stripe) } .home-link { display: inline-block; font-size: 0.82em; color: var(--muted); text-decoration: none; margin-bottom: 1.75em; transition: color 0.15s } .home-link:hover { color: var(--fg) } .post-meta { margin: 0.1em 0 2.25em; font-size: 0.82em; color: var(--muted) } .center { text-align: center; } .instagram-media { margin-left: auto !important; margin-right: auto !important } .inaccessible { background-color: #ffe4e1; /* light pink highlight */ color: #a00; /* dark red text for contrast */ font-weight: bold; /* optional: make it bold */ padding: 0 2px; /* small padding so highlight isn’t cramped */ border-radius: 2px; /* optional: slightly rounded corners */ }</style>
+<a class="home-link" href="/blog/">← Home</a><h1>🦓 Can GPT-4 solve a logic puzzle?</h1>
+<p class="post-meta">Last updated: · Time to read: 28 minutes</p>
+<p></p>
+<div class="lazy-media-container">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="A zebra solving a jigsaw puzzle, DALLE2" data-src="/blog/_posts/2023-03-19-zebra-problem/DALLE-a-zebra-solving-a-jigsaw-puzzle.png" class="lazy-img lazy-no-lqip"><div class="lazy-spinner"></div>
+</div>
+<h4 id="constraint-satisfaction-using-chatgpt-3-and-gpt-4">Constraint satisfaction using ChatGPT-3 and GPT-4</h4>
+<p>GPT-3 (the basis for ChatGPT) and GPT-4 are making headlines for their problem solving abilities and next-level conversational responses. We decided to test these models against a well-known logic problem called the Zebra Problem. Commonly misattributed to Carol Lewis or Albert Einstein, it was published in Life International magazine on December 17, 1962. It has been used as a popular benchmark for testing constraint satisfaction algorithms.</p>
+<h2 id="prompt-engineering">Prompt engineering</h2>
+<p>In order to perform a fair test, we evaluated both models using the same prompt.</p>
+<p>First we primed the model as a “problem solving AI” with the following prompt:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You are a problem solving AI. Read the problem carefully and answer the question in detail.
+</code></pre></div></div>
+<p>Then, we fed it the original text of the puzzle:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There are five houses.
+The Englishman lives in the red house.
+The Spaniard owns the dog.
+Coffee is drunk in the green house.
+The Ukrainian drinks tea.
+The green house is immediately to the right of the ivory house.
+The Old Gold smoker owns snails.
+Kools are smoked in the yellow house.
+Milk is drunk in the middle house.
+The Norwegian lives in the first house.
+The man who smokes Chesterfields lives in the house next to the man with the fox.
+Kools are smoked in the house next to the house where the horse is kept.
+The Lucky Strike smoker drinks orange juice.
+The Japanese smokes Parliaments.
+The Norwegian lives next to the blue house.
+
+Now, who drinks water? Who owns the zebra?
+
+In the interest of clarity, it must be added that each of the five houses is painted a different color, and their inhabitants are of different national extractions, own different pets, drink different beverages and smoke different brands of American cigarets. One other thing: in statement 6, right means your right.
+</code></pre></div></div>
+<p>— Life International, December 17, 1962</p>
+<h2 id="talkative-machines">Talkative machines</h2>
+<p>Because we wanted highly verbose answers, to allow us to debug the models problem solving accurately, we encountered an issue where our models became <em>too</em> talkative. All models hit their response limits midway through answering the problem, requiring us to prompt the model to continue where it left off. The impact this might have had on the problem-solving capabilities of the model cannot be determined, and is a flaw in the experiment.</p>
+<p>The point where responses where stitched together are indicated with <code class="language-plaintext highlighter-rouge">[...]</code>. Often this occured mid-sentence, and the model correctly continued the sentence, giving the suggestion / illusion it was able to recover from the interruption.</p>
+<h2 id="testing">Testing</h2>
+<p>We tested the following language models on the OpenAI platform: <code class="language-plaintext highlighter-rouge">GPT-3.5</code>, <code class="language-plaintext highlighter-rouge">ChatGPT-3</code> and the newest gen. <code class="language-plaintext highlighter-rouge">GPT-4</code> and <code class="language-plaintext highlighter-rouge">ChatGPT-4</code>.</p>
+<h3 id="gpt-35">GPT-3.5</h3>
+<details> <summary>Complete GPT-3.5 response</summary><h4 id="complete-gpt-35-response">Complete GPT-3.5 response</h4>
+<p>Based on the given information, we can create a table to keep track of the different attributes of each house:</p>
+<table>
+<thead><tr>
+<th>House</th>
+<th>Color</th>
+<th>Nationality</th>
+<th>Drink</th>
+<th>Smoke</th>
+<th>Pet</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Yellow</td>
+<td>Norwegian</td>
+<td>Water</td>
+<td>Kools</td>
+<td>Fox</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Blue</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Red</td>
+<td>Englishman</td>
+<td>?</td>
+<td>Old Gold</td>
+<td>?</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ivory</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Green</td>
+<td>?</td>
+<td>Coffee</td>
+<td>?</td>
+<td>Zebra</td>
+</tr>
+</tbody>
+</table>
+<p>From the given information, we can fill in some of the missing attributes:</p>
+<ul>
+<li>House 1 is yellow and the Norwegian lives there. They drink water and smoke Kools, and they have a fox.</li>
+<li>The Norwegian lives next to the blue house, so house 2 must be blue.</li>
+<li>The Englishman lives in the red house, so house 3 is red.</li>
+<li>The green house is immediately to the right of the ivory house, so house 4 must be green.</li>
+<li>Coffee is drunk in the green house, and milk is drunk in the middle house (which is house 3), so the Ukrainian must live in house 2 and drink tea.</li>
+<li>House 5 has a zebra, so the owner of the zebra is in house 5. We don’t know their nationality, drink, or cigarette brand yet.</li>
+<li>The Old Gold smoker owns snails, but we don’t know which house they live in.</li>
+<li>Kools are smoked in the yellow house and in the house next to the house where the horse is kept. So the horse must be in either house 1 or 2, and the Kools smoker must be in the other one. But we don’t know which house has the horse or which house the Kools smoker is in.</li>
+<li>The man who smokes Chesterfields lives in the house next to the man with the fox. So the Chesterfields smoker must be in either house 2 or 4, and the fox owner must be in the other one. But we don’t know which house has the fox or which house the Chesterfields smoker is in.</li>
+<li>The Lucky Strike smoker drinks orange juice, but we don’t know which house they live in.</li>
+<li>The Japanese smokes Parliaments, but we don’t know which house they live in.</li>
+</ul>
+<p>Now we can use some of the remaining clues to narrow down the possibilities:</p>
+<ul>
+<li>Only one house is left for the Old Gold smoker and their snails, so they must be in house 4.</li>
+<li>The Norwegian lives next to the blue house, so their house (house 1) must not be blue. Therefore, the blue house (house 2) must be where the Chesterfields smoker lives, and the fox must be in house 4. So the Chesterfields smoker must be in house 4, and the fox owner (who drinks nothing and smokes nothing) must be in house 2.</li>
+<li>Since the horse is not in house 1, it must be in house 2. Therefore, the Kools smoker must be in house 1, and the Norwegian drinks water.</li>
+<li>The Lucky Strike smoker must be in house 3, since that is the only house left with a drink (orange juice) that is not already assigned to someone.</li>
+<li>The Japanese smokes Parliaments, which means they must be in house 5 with the zebra.</li>
+</ul>
+<p>So the final solution is:</p>
+<table>
+<thead><tr>
+<th>House</th>
+<th>Color</th>
+<th>Nationality</th>
+<th>Drink</th>
+<th>Smoke</th>
+<th>Pet</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Yellow</td>
+<td>Norwegian</td>
+<td>Water</td>
+<td>Kools</td>
+<td>Fox</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Blue</td>
+<td>?</td>
+<td>?</td>
+<td>Chesterfields</td>
+<td>Horse</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Red</td>
+<td>Englishman</td>
+<td>Orange juice</td>
+<td>Lucky Strike</td>
+<td>?</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ivory</td>
+<td>?</td>
+<td>Milk</td>
+<td>Old Gold</td>
+<td>Snails</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Green</td>
+<td>Japanese</td>
+<td>Coffee</td>
+<td>Parliaments</td>
+<td>Zebra</td>
+</tr>
+</tbody>
+</table>
+<p>Therefore, the Norwegian drinks water and the Japanese owns the zebra.</p></details><table>
+<thead><tr>
+<th>House</th>
+<th>Color</th>
+<th>Nationality</th>
+<th>Drink</th>
+<th>Smoke</th>
+<th>Pet</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Yellow</td>
+<td>Norwegian</td>
+<td>Water</td>
+<td>Kools</td>
+<td>Fox</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Blue</td>
+<td>?</td>
+<td>?</td>
+<td>Chesterfields</td>
+<td>Horse</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Red</td>
+<td>Englishman</td>
+<td>Orange juice</td>
+<td>Lucky Strike</td>
+<td>?</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ivory</td>
+<td>?</td>
+<td>Milk</td>
+<td>Old Gold</td>
+<td>Snails</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Green</td>
+<td>Japanese</td>
+<td>Coffee</td>
+<td>Parliaments</td>
+<td>Zebra</td>
+</tr>
+</tbody>
+</table>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Therefore, the Norwegian drinks water and the Japanese owns the zebra.
+</code></pre></div></div>
+<h3 id="chatgpt-3">ChatGPT-3</h3>
+<details> <summary>Complete ChatGPT-3 response</summary><h4 id="complete-chatgpt-3-response">Complete ChatGPT-3 response</h4>
+<p>This is a classic problem known as the “Einstein’s Riddle” or “Zebra Puzzle”. To solve this problem, we need to make use of the given information and apply logic to deduce the answer.</p>
+<p>First, let’s list all the given information:</p>
+<ul>
+<li>Englishman lives in the red house.</li>
+<li>Spaniard owns a dog.</li>
+<li>Coffee is drunk in the green house.</li>
+<li>Ukrainian drinks tea.</li>
+<li>Green house is immediately to the right of the ivory house.</li>
+<li>Old Gold smoker owns snails.</li>
+<li>Kools are smoked in the yellow house.</li>
+<li>Milk is drunk in the middle house.</li>
+<li>Norwegian lives in the first house.</li>
+<li>Chesterfields smoker lives next to the house with the fox.</li>
+<li>Kools are smoked in the house next to the house where the horse is kept.</li>
+<li>Lucky Strike smoker drinks orange juice.</li>
+<li>Japanese smokes Parliaments.</li>
+<li>Norwegian lives next to the blue house.</li>
+</ul>
+<p>Using this information, we can create a grid and fill in the information we have:</p>
+<table>
+<thead><tr>
+<th>House</th>
+<th>Color</th>
+<th>Nationality</th>
+<th>Drink</th>
+<th>Smoke</th>
+<th>Pet</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Yellow</td>
+<td>Norwegian</td>
+<td>Water</td>
+<td>Kools</td>
+<td> </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Blue</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>3</td>
+<td>Red</td>
+<td>Englishman</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ivory</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Green</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<p>We know that the Norwegian lives in the first house and drinks water, so we can fill that in. We also know that the Japanese smokes Parliaments, so they can’t be in the first house. The Old Gold smoker owns snails, so they can’t be in the first house either.</p>
+<table>
+<thead><tr>
+<th>House</th>
+<th>Color</th>
+<th>Nationality</th>
+<th>Drink</th>
+<th>Smoke</th>
+<th>Pet</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Yellow</td>
+<td>Norwegian</td>
+<td>Water</td>
+<td>Kools</td>
+<td> </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Blue</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>3</td>
+<td>Red</td>
+<td>Englishman</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ivory</td>
+<td> </td>
+<td> </td>
+<td>Old Gold</td>
+<td>Snails</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Green</td>
+<td> </td>
+<td>Coffee</td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<p>We also know that the green house is immediately to the right of the ivory house, so the ivory house must be either the second or the fourth house. However, the Norwegian lives next to the blue house, which means the blue house must be either the second or the fifth house. Since the Japanese smokes Parliaments, they cannot be in the second house, so the blue house must be the fifth house. This means that the ivory house is the second house.</p>
+<table>
+<thead><tr>
+<th>House</th>
+<th>Color</th>
+<th>Nationality</th>
+<th>Drink</th>
+<th>Smoke</th>
+<th>Pet</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Yellow</td>
+<td>Norwegian</td>
+<td>Water</td>
+<td>Kools</td>
+<td> </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ivory</td>
+<td> </td>
+<td> </td>
+<td>Old Gold</td>
+<td>Snails</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Red</td>
+<td>Englishman</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Green</td>
+<td> </td>
+<td>Coffee</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Blue</td>
+<td> </td>
+<td> </td>
+<td>Parliaments</td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<p>Now, we know that the green house is the fourth house and that coffee is drunk there. The Englishman lives in the red house, […] so we can fill that in. The Spaniard owns the dog, so they can’t be in any of the other houses. We also know that Kools are smoked in the yellow house, so that must be the third house.</p>
+<table>
+<thead><tr>
+<th>House</th>
+<th>Color</th>
+<th>Nationality</th>
+<th>Drink</th>
+<th>Smoke</th>
+<th>Pet</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Yellow</td>
+<td>Norwegian</td>
+<td>Water</td>
+<td>Kools</td>
+<td> </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ivory</td>
+<td> </td>
+<td> </td>
+<td>Old Gold</td>
+<td>Snails</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Red</td>
+<td>Englishman</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Green</td>
+<td> </td>
+<td>Coffee</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Blue</td>
+<td> </td>
+<td> </td>
+<td>Parliaments</td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<p>Now, we know that the Lucky Strike smoker drinks orange juice, so they can’t be in any of the remaining houses. The only remaining options for the pet are a fox and a zebra, and we know that the man who smokes Chesterfields lives next to the man with the fox. Since we don’t know the nationality of the person who smokes Chesterfields, we can’t determine which house the fox is in. However, we also know that Kools are smoked in the house next to the house where the horse is kept. Since we haven’t placed a horse in any of the houses, we can’t determine which house the Kools smoker is in either.</p>
+<p>However, we do know that none of the remaining houses can have a pet other than a fox or a zebra. Therefore, the person who owns the zebra must be in one of the remaining houses. Since we don’t know the nationality of the person who owns the zebra, we can’t determine which house they are in.</p>
+<p>In summary, based on the given information, we can conclude that the person who drinks water is the Norwegian and that the person who owns the zebra cannot be determined with certainty.</p></details><table>
+<thead><tr>
+<th>House</th>
+<th>Color</th>
+<th>Nationality</th>
+<th>Drink</th>
+<th>Smoke</th>
+<th>Pet</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Yellow</td>
+<td>Norwegian</td>
+<td>Water</td>
+<td>Kools</td>
+<td> </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ivory</td>
+<td> </td>
+<td> </td>
+<td>Old Gold</td>
+<td>Snails</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Red</td>
+<td>Englishman</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Green</td>
+<td> </td>
+<td>Coffee</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Blue</td>
+<td> </td>
+<td> </td>
+<td>Parliaments</td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>In summary, based on the given information, we can conclude that the person who drinks water is the Norwegian and that the person who owns the zebra cannot be determined with certainty.
+</code></pre></div></div>
+<h3 id="gpt-4">GPT-4</h3>
+<details> <summary>Complete GPT-4 response</summary><h4 id="complete-gpt-4-response">Complete GPT-4 response</h4>
+<p>To solve this problem, we can create a table with 5 columns representing the houses and rows for the colors, nationalities, beverages, cigarettes, and pets. Then we can fill in the table based on the given information:</p>
+<table>
+<thead><tr>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1. Norwegian</td>
+<td>2. Blue</td>
+<td>3. Milk</td>
+<td>4.</td>
+<td>5.</td>
+</tr>
+<tr>
+<td>1. Red</td>
+<td>2.</td>
+<td>3.</td>
+<td>4.</td>
+<td>5.</td>
+</tr>
+<tr>
+<td>1.</td>
+<td>2.</td>
+<td>3.</td>
+<td>4.</td>
+<td>5.</td>
+</tr>
+<tr>
+<td>1.</td>
+<td>2.</td>
+<td>3.</td>
+<td>4.</td>
+<td>5.</td>
+</tr>
+</tbody>
+</table>
+<p>Now we can start filling in the table based on the given clues:</p>
+<ol>
+<li>The Englishman lives in the red house.<ul><li>Red house: Englishman</li></ul>
+</li>
+<li>The Spaniard owns the dog.<ul><li>Spaniard: Dog</li></ul>
+</li>
+<li>Coffee is drunk in the green house.<ul><li>Green house: Coffee</li></ul>
+</li>
+<li>The Ukrainian drinks tea.<ul><li>Ukrainian: Tea</li></ul>
+</li>
+<li>The green house is immediately to the right of the ivory house.<ul><li>Green house is not the first house because there’s a house to the left. So, the green house can only be in position 3 and the ivory house in position 2. This means that the middle house (house 3) is the green house where coffee is drunk.</li></ul>
+</li>
+<li>The Old Gold smoker owns snails.<ul><li>Old Gold: Snails</li></ul>
+</li>
+<li>Kools are smoked in the yellow house.<ul><li>Yellow house: Kools</li></ul>
+</li>
+<li>Milk is drunk in the middle house.<ul><li>We already know this information.</li></ul>
+</li>
+<li>The Norwegian lives in the first house.<ul><li>We already know this information.</li></ul>
+</li>
+<li>The man who smokes Chesterfields lives in the house next to the man with the fox.<ul><li>Chesterfields: Next to Fox</li></ul>
+</li>
+<li>Kools are smoked in the house next to the house where the horse is kept.<ul><li>Kools: Next to Horse</li></ul>
+</li>
+<li>The Lucky Strike smoker drinks orange juice.<ul><li>Lucky Strike: Orange Juice</li></ul>
+</li>
+<li>The Japanese smokes Parliaments.<ul><li>Japanese: Parliaments</li></ul>
+</li>
+<li>The Norwegian lives next to the blue house.<ul><li>We already know this information.</li></ul>
+</li>
+</ol>
+<p>Now, let’s fill in the information we know into the table:</p>
+<table>
+<thead><tr>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1. Norwegian</td>
+<td>2. Blue</td>
+<td>3. Milk</td>
+<td>4.</td>
+<td>5.</td>
+</tr>
+<tr>
+<td>1.</td>
+<td>2. Ivory</td>
+<td>3. Green</td>
+<td>4.</td>
+<td>5.</td>
+</tr>
+<tr>
+<td>1.</td>
+<td>2.</td>
+<td>3. Coffee</td>
+<td>4.</td>
+<td>5.</td>
+</tr>
+<tr>
+<td>1.</td>
+<td>2.</td>
+<td>3.</td>
+<td>4.</td>
+<td>5.</td>
+</tr>
+</tbody>
+</table>
+<p>Based on the information we have, we can deduce that the red house must be in position 5 because it’s the only option left for the Englishman. Then, the yellow house with Kools must be in position 1. Now the table looks like this:</p>
+<table>
+<thead><tr>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1. Norwegian</td>
+<td>2. Blue</td>
+<td>3. Milk</td>
+<td>4.</td>
+<td>5. English</td>
+</tr>
+<tr>
+<td>1. Yellow</td>
+<td>2. Ivory</td>
+<td>3. Green</td>
+<td>4.</td>
+<td>5. Red</td>
+</tr>
+<tr>
+<td>1. Kools</td>
+<td>2.</td>
+<td>3. Coffee</td>
+<td>4.</td>
+<td>5.</td>
+</tr>
+<tr>
+<td>1.</td>
+<td>2.</td>
+<td>3.</td>
+<td>4.</td>
+<td>5.</td>
+</tr>
+</tbody>
+</table>
+<p>Since Kools are next to the house with a horse, the horse must be in house 2. Since Chesterfields are next to the house with a fox, the fox must be in house 3 and Chesterfields in house 4. Now the table looks like this:</p>
+<table>
+<thead><tr>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1. Norwegian</td>
+<td>2. Blue</td>
+<td>3. Milk</td>
+<td>4.</td>
+<td>5. English</td>
+</tr>
+<tr>
+<td>1. Yellow</td>
+<td>2. Ivory</td>
+<td>3. Green</td>
+<td>4.</td>
+<td>5. Red</td>
+</tr>
+<tr>
+<td>1. Kools</td>
+<td>2.</td>
+<td>3. Coffee</td>
+<td>4. Chesterfields</td>
+<td>5.</td>
+</tr>
+<tr>
+<td>1.</td>
+<td>2. Horse</td>
+<td>3. Fox</td>
+<td>4.</td>
+<td>5.</td>
+</tr>
+</tbody>
+</table>
+<p>Now we can fill in the remaining information. The Ukrainian must be in house 2 and drink tea. The Japanese must be in house 4 and smoke Parliaments. The Spaniard must be in house 5 and own a dog. House 4 must drink Orange Juice and Lucky Strike. The table now looks like this:</p>
+<table>
+<thead><tr>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1. Norwegian</td>
+<td>2. Blue</td>
+<td>3. Milk</td>
+<td>4. Japanese</td>
+<td>5. English</td>
+</tr>
+<tr>
+<td>1. Yellow</td>
+<td>2. Ivory</td>
+<td>3. Green</td>
+<td>4.</td>
+<td>5. Red</td>
+</tr>
+<tr>
+<td>1. Kools</td>
+<td>2.</td>
+<td>3. Coffee</td>
+<td>4. Parliaments</td>
+<td>5.</td>
+</tr>
+<tr>
+<td>1.</td>
+<td>2. Horse</td>
+<td>3. Fox</td>
+<td>4.</td>
+<td>5. Dog</td>
+</tr>
+</tbody>
+</table>
+<p>Since Old Gold is the only cigarette left, it must be in house 5, which means the snails are also in house 5. House 1 must drink water, and the only pet left is the zebra, which must be in house 3. The final table looks like this: | | | | | | | —— | —— | —— | —- | —- | | 1. Norwegian | 2. Blue | 3. Milk | 4. Japanese | 5. English | | 1. Yellow | 2. Ivory | 3. Green | 4. | 5. Red | | 1. Kools | 2. | 3. Coffee | 4. Parliaments | 5. Old Gold | | 1. Water | 2. Horse | 3. Fox | 4. Orange Juice | 5. Dog | | 1. | 2. Ukrainian | 3. Tea | 4. Zebra | 5. Snails |</p>
+<p>Now we can answer the questions:</p>
+<p>Who drinks water? The Norwegian drinks water.</p>
+<p>Who owns the zebra? The Japanese owns the zebra.</p></details><table>
+<thead><tr>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+<th> </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1. Norwegian</td>
+<td>2. Blue</td>
+<td>3. Milk</td>
+<td>4. Japanese</td>
+<td>5. English</td>
+</tr>
+<tr>
+<td>1. Yellow</td>
+<td>2. Ivory</td>
+<td>3. Green</td>
+<td>4.</td>
+<td>5. Red</td>
+</tr>
+<tr>
+<td>1. Kools</td>
+<td>2.</td>
+<td>3. Coffee</td>
+<td>4. Parliaments</td>
+<td>5. Old Gold</td>
+</tr>
+<tr>
+<td>1. Water</td>
+<td>2. Horse</td>
+<td>3. Fox</td>
+<td>4. Orange Juice</td>
+<td>5. Dog</td>
+</tr>
+<tr>
+<td>1.</td>
+<td>2. Ukrainian</td>
+<td>3. Tea</td>
+<td>4. Zebra</td>
+<td>5. Snails</td>
+</tr>
+</tbody>
+</table>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Now we can answer the questions:
+
+Who drinks water? The Norwegian drinks water.
+
+Who owns the zebra? The Japanese owns the zebra.
+</code></pre></div></div>
+<h3 id="chatgpt-4">ChatGPT-4</h3>
+<details> <summary>Complete ChatGPT-4 response</summary><h4 id="complete-chatgpt-4-response">Complete ChatGPT-4 response</h4>
+<p>To solve this problem, we will use a process of elimination based on the given information. We will use the following abbreviations for better readability:</p>
+<p>Nations: E (English), S (Spaniard), U (Ukrainian), N (Norwegian), J (Japanese)</p>
+<p>Colors: R (Red), G (Green), I (Ivory), Y (Yellow), B (Blue)</p>
+<p>Pets: D (Dog), S (Snails), F (Fox), H (Horse), Z (Zebra)</p>
+<p>Drinks: C (Coffee), T (Tea), M (Milk), W (Water), O (Orange Juice)</p>
+<p>Cigarettes: OG (Old Gold), K (Kools), CH (Chesterfields), LS (Lucky Strike), P (Parliaments)</p>
+<p>The Norwegian lives in the first house, and the first house is next to the blue house:</p>
+<p>(N, _, _, _, _) (B, _, _, _, _)</p>
+<p>The Englishman lives in the red house, and the Norwegian lives next to the blue house:</p>
+<p>(_, E, _, _, _) (R, _, _, _, _)</p>
+<p>The green house is immediately to the right of the ivory house:</p>
+<p>(I, _, G, _, _)</p>
+<p>Coffee is drunk in the green house:</p>
+<p>(_, _, C, _, _)</p>
+<p>The Ukrainian drinks tea:</p>
+<p>(_, _, _, T, _)</p>
+<p>Kools are smoked in the yellow house:</p>
+<p>(_, _, _, , Y) (, _, _, _, K)</p>
+<p>Milk is drunk in the middle house:</p>
+<p>(_, _, M, _, _)</p>
+<p>The Old Gold smoker owns snails:</p>
+<p>(_, _, _, , OG) (, _, _, _, S)</p>
+<p>The Spaniard owns the dog:</p>
+<p>(_, S, _, _, ) (, _, D, _, _)</p>
+<p>The man who smokes Chesterfields lives in the house next to the man with the fox:</p>
+<p>(_, _, _, , CH) (, _, _, _, F)</p>
+<p>Kools are smoked in the house next to the house where the horse is kept:</p>
+<p>(_, _, _, _, ) (, _, _, _, H)</p>
+<p>The Lucky Strike smoker drinks orange juice:</p>
+<p>(_, _, _, , LS) (, _, _, O, _)</p>
+<p>The Japanese smokes Parliaments:</p>
+<p>(_, _, _, _, P)</p>
+<p>Now, let’s fill in the information we have so far:</p>
+<p>House 1: (N, _, _, M, _)</p>
+<p>House 2: (E, R, _, _, )</p>
+<p>House 3: (, I, G, C, )</p>
+<p>House 4: (, _, _, T, _)</p>
+<p>House 5: (J, _, _, _, P)</p>
+<p>Since the Norwegian lives in the first house, and the first house is next to the blue house, the second house must be blue:</p>
+<p>House 2: (E, R, _, _, )</p>
+<p>House 3: (, I, G, C, _)</p>
+<p>Since the green house is immediately to the right of the ivory house, the green house must be the third house and the ivory house must be the second:</p>
+<p>House 2: (E, R, I, _, )</p>
+<p>House 3: (, _, G, C, _)</p>
+<p>Now, since the Englishman lives in the red house, the red house must be the first house:</p>
+<p>House 1: (N, _, R, M, _)</p>
+<p>As the Ukrainian drinks tea, they must live in the fourth house:</p>
+<p>House 4: (U, _, _, T, _)</p>
+<p>This means the Spaniard must live in the fifth house:</p>
+<p>House 5: (J, S, _, _, P)</p>
+<p>Since Kools are smoked in the yellow house and it’s the only house without</p>
+<p>[…]</p>
+<p>Since Kools are smoked in the yellow house and it’s the only house without a color, the fifth house must be yellow:</p>
+<p>House 5: (J, S, Y, _, P)</p>
+<p>Now, we know that Kools are smoked in the yellow house, so they are smoked in the fifth house:</p>
+<p>House 5: (J, S, Y, _, P, K)</p>
+<p>The Old Gold smoker owns snails, and since the third house is the only one without a pet, the Old Gold smoker and the snails must be in the third house:</p>
+<p>House 3: (_, _, G, C, OG, S)</p>
+<p>The man who smokes Chesterfields lives next to the man with the fox. Since the only two consecutive houses without a cigarette brand and a pet are the first and second houses, the fox must be in the second house and Chesterfields must be smoked in the first house:</p>
+<p>House 1: (N, _, R, M, CH)</p>
+<p>House 2: (E, _, I, _, F)</p>
+<p>Kools are smoked in the house next to the house where the horse is kept. Since Kools are smoked in the fifth house, the horse must be in the fourth house:</p>
+<p>House 4: (U, _, _, T, H)</p>
+<p>The Lucky Strike smoker drinks orange juice. The only house without a drink is the second house, so the Lucky Strike smoker and orange juice must be in the second house:</p>
+<p>House 2: (E, _, I, O, LS, F)</p>
+<p>Now we have the complete arrangement:</p>
+<p>House 1: (N, _, R, M, CH)</p>
+<p>House 2: (E, , I, O, LS, F)</p>
+<p>House 3: (, _, G, C, OG, S)</p>
+<p>House 4: (U, _, _, T, H)</p>
+<p>House 5: (J, S, Y, _, P, K)</p>
+<p>The only house without a drink is the first house, so the Norwegian must drink water:</p>
+<p>House 1: (N, _, R, W, CH)</p>
+<p>The only house without a pet is the first house, so the Norwegian must own the zebra:</p>
+<p>House 1: (N, _, R, W, CH, Z)</p>
+<p>So the Norwegian drinks water, and the Norwegian owns the zebra.</p></details><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>So the Norwegian drinks water, and the Norwegian owns the zebra. 
+</code></pre></div></div>
+<h2 id="analysis">Analysis</h2>
+<p>To conclude, the GPT models were both able correctly answer both questions posed by the puzzle, whilst the ChatGPT models were only able to solve half of the puzzle.</p>
+<p>What is interesting about this experiment is how no model seemed to obviously cheat. Although this problem is well documented, meaning the answer is readily available via wikipedia, etc., the responses gathered attempted to solve the problem in an iterative style, colating known information in order to progress through the problem, in a manner similar to how a human might attempt to explain / solve the puzzle.</p>
+<p>Ultimately, what we are testing in this experiment is the ability of the model to recall the solution to a well-known logic puzzle and deliver a response in a conversational style mimicking problem-solving. What seems evident, however, is that the ChatGPT training hampers the ability of the underlying GPT model to correctly answer questions. ChatGPT-3 was able to explicitly identify the alternate names of the puzzle in it’s response, which shows how the model can make connections to existing knowledge, but will fail to utilise this in solving a given puzzle.</p>
+<p>It is clear that the GPT models posess strong reasoning and recall characteristics, and whilst the ChatGPT models is able to interact in a conversational manner, this is at the cost of it’s ability to correctly answer questions. This is not a novel conclusion, however the use of ChatGPT as an authority in search engines such as Bing suggests the inaccuracies of the model are being held secondary to user experience.</p>
+<p>Further experiments testing GPT could include a novel logic-puzzle generator, to remove advantage due to recall, and comparison against a wider array of models and constraint satisfaction algorithms.</p>
+<hr>
+<p><strong>Get in touch:</strong></p>
+<ul>
+<li>Check out my projects on <a href="https://github.com/Cutwell">GitHub</a>
+</li>
+<li>Or follow me on <a href="https://www.linkedin.com/in/zacharysmith5/">LinkedIn</a>
+</li>
+</ul>
+<i id="lt" class="d"></i><br> <i id="ps" class="d"></i> <script> var POSTS=[{"t":"Merlin - Building a better chatbot than Microsoft/Mojang","u":"https://cutwell.github.io/blog/minecraft-agent-merlin/","d":"February 25, 2026","e":"The competition - who is Merl? \n"},{"t":"AI for creative writing - a retrospective on Story Scribbler","u":"https://cutwell.github.io/blog/storyscribbler-retro/","d":"January 10, 2026","e":"\n \n \n\n"},{"t":"Canary - A framework for detecting prompt injection attacks.","u":"https://cutwell.github.io/blog/canary-llm/","d":"October 23, 2023","e":"Overview\n"},{"t":"Too dangerous to live, too unregulated to die.","u":"https://cutwell.github.io/blog/ai-art-vs-artists/","d":"December 11, 2022","e":"How stable diffusion is disrupting artists’ livelihoods, and why “AI Creatives” won’t stop ripping off their favourit..."},{"t":"Approximating the alpha shape of spatial data using Python and Shapely.","u":"https://cutwell.github.io/blog/spatial-data-boundary/","d":"July 28, 2022","e":"\n"},{"t":"Using a neural network to augment wind data.","u":"https://cutwell.github.io/blog/neural-network-augmentation/","d":"July 27, 2022","e":"\n"},{"t":"Using neural networks to colourise images from the Opportunity Mars Rover.","u":"https://cutwell.github.io/blog/opportunity-rover-colourised/","d":"August 1, 2021","e":"\n"}]; (function(){ var btn=document.getElementById('theme-btn'); btn.addEventListener('click',function(){ var dark=document.documentElement.getAttribute('data-theme')==='dark'; document.documentElement.setAttribute('data-theme',dark?'light':'dark'); localStorage.setItem('theme',dark?'light':'dark'); }); })(); (function(){ var btn=document.getElementById('search-btn'),overlay=document.getElementById('search-overlay'),input=document.getElementById('search-input'),results=document.getElementById('search-results'); function openSearch(){overlay.classList.add('open');input.focus();render('');} function closeSearch(){overlay.classList.remove('open');input.value='';} btn.addEventListener('click',openSearch); overlay.addEventListener('click',function(e){if(e.target===overlay)closeSearch();}); document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeSearch(); if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();overlay.classList.contains('open')?closeSearch():openSearch();} }); function render(q){ q=q.toLowerCase().trim(); var f=q?POSTS.filter(function(p){return p.t.toLowerCase().indexOf(q)>-1||(p.e&&p.e.toLowerCase().indexOf(q)>-1);}):POSTS; if(!f.length){results.innerHTML='<div class="search-no-results">No posts found.<\/div>';return;} results.innerHTML=f.map(function(p){return '<div class="search-result"><a href="'+p.u+'"><div class="search-result-title">'+p.t+'<\/div><div class="search-result-date">'+p.d+'<\/div><\/a><\/div>';}).join(''); } input.addEventListener('input',function(){render(this.value);}); })(); document.getElementById("ps").innerHTML="Size: "+document.documentElement.outerHTML.length+" bytes"; window.onload=function(){ var perfData=performance.getEntriesByType("navigation")[0]; if(perfData){ document.getElementById("lt").innerHTML="Load time: "+Math.round(perfData.domContentLoadedEventEnd-perfData.fetchStart)+"ms" }else{ document.getElementById("lt").innerHTML="Load time: "+(window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart)+"ms" } }; (function(){ var obs=('IntersectionObserver' in window)?new IntersectionObserver(function(entries){ entries.forEach(function(entry){ if(!entry.isIntersecting)return; var c=entry.target;obs.unobserve(c); var img=c.querySelector('.lazy-img[data-src]'); if(img){ var s=c.querySelector('.lazy-spinner'); var full=new Image(); full.onload=function(){img.src=full.src;img.classList.remove('lazy-loading','lazy-no-lqip');img.classList.add('lazy-loaded');if(s)s.classList.add('lazy-hidden');}; full.onerror=function(){img.classList.remove('lazy-loading','lazy-no-lqip');img.classList.add('lazy-loaded');if(s)s.classList.add('lazy-hidden');}; full.src=img.dataset.src; } var vid=c.querySelector('.lazy-video[data-src],.lazy-video'); if(vid){ var s2=c.querySelector('.lazy-spinner'); vid.querySelectorAll('source[data-src]').forEach(function(src){src.setAttribute('src',src.dataset.src);src.removeAttribute('data-src');}); if(vid.dataset.src){vid.setAttribute('src',vid.dataset.src);vid.removeAttribute('data-src');} vid.load(); vid.addEventListener('canplay',function(){if(s2)s2.classList.add('lazy-hidden');},{once:true}); } }); },{rootMargin:'200px 0px'}):null; document.querySelectorAll('.lazy-media-container').forEach(function(c){ if(obs){obs.observe(c);} else{ var img=c.querySelector('.lazy-img[data-src]'); if(img){img.src=img.dataset.src;img.classList.remove('lazy-loading','lazy-no-lqip');img.classList.add('lazy-loaded');} var vid=c.querySelector('.lazy-video'); if(vid){ vid.querySelectorAll('source[data-src]').forEach(function(s){s.setAttribute('src',s.dataset.src);s.removeAttribute('data-src');}); if(vid.dataset.src){vid.setAttribute('src',vid.dataset.src);vid.removeAttribute('data-src');} vid.load(); } c.querySelector('.lazy-spinner')&&c.querySelector('.lazy-spinner').classList.add('lazy-hidden'); } }); })(); document.querySelectorAll('a[href^="http"]').forEach(function(a){ if(a.classList.contains('nav-logo'))return; try{ var u=new URL(a.href); if(u.hostname===location.hostname)return; var i=document.createElement('img'); i.src='https://www.google.com/s2/favicons?domain='+u.hostname+'&sz=64'; i.className='link-favicon'; i.setAttribute('aria-hidden','true'); a.insertBefore(i,a.firstChild); }catch(e){} }); </script>
+</body>
+</html>
