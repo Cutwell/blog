@@ -82,6 +82,7 @@ bundle exec jekyll clean
    ```
 3. If using images, create a corresponding directory: `media/post-title/`
 4. Reference images in posts as: `![alt text](/media/post-title/image.png)`
+5. To work on a post without publishing it, add `draft: true` to its front matter. Draft posts still build (and are reachable by direct URL) but are excluded from the homepage listing and the search index. Remove the field (or set it to `false`) when the post is ready.
 
 ### Deployment
 

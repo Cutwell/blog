@@ -4,6 +4,7 @@ title:
 categories:
   - AI
 last-updated: 2026-05-20
+draft: true
 ---
 
 Agentic systems are moving beyond simple single-agent paradigms - the idea of using multiple agents in an "orchestrator - sub-agent" pattern has existed almost as long as the agentic pattern itself, but its viability has varied over time.

@@ -4,6 +4,7 @@ title: MCP, A2A, and when to care
 categories:
   - AI
 last-updated: 2026-05-22
+draft: true
 ---
 
 The Model context protocol (MCP) and the Agent to agent protocol (A2A) are both popular concepts trying to formalise the most basic issues with agents:
