@@ -5,9 +5,7 @@ title: Zachary's Blog
 # Hi, I'm Zachary.
 
 
-Generative AI and Machine Learning Engineer working @ [Datatonic](https://datatonic.com/).
-
-Solo developer @ [StoryScribbler](https://storyscribbler.com/)
+Senior Machine Learning Engineer working @ [Datatonic](https://datatonic.com/).
 
 <br>
 
